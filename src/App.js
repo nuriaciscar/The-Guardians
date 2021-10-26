@@ -30,6 +30,9 @@ function App() {
             <Route path="/mynews" exact>
               <MyNews />
             </Route>
+            <Route path="/details" exact>
+              <MyNews />
+            </Route>
             <Route path="/" exact>
               <Redirect to="/home" />
             </Route>
