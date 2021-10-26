@@ -1,46 +1,10 @@
-import styles from "Homepage.modules.css";
+//import styles from "Homepage.modules.css";
+import Header from "../../components/Header/Header";
 
 const HomePage = () => {
   return (
     <div class="container">
-      <header class="header">
-        <div class="header__top-container">
-          <div class="header__logo">
-            <img src="" alt="logo the guardian" />
-          </div>
-          <div class="header__nav">
-            <div class="header__nav--user">
-              <a href="h" class="header__nav-link">
-                MY NEWS
-              </a>
-              <button class="header__nav-sign">Sign up</button>
-              <button class="header__nav-login">Login</button>
-            </div>
-            <div class="header__nav--sections">
-              <ul class="header__nav--list">
-                <li class="header__nav--list-element">NEWS</li>
-                <li class="header__nav--list-element">SPORT</li>
-                <li class="header__nav--list-element">LIFESTYLE</li>
-                <li class="header__nav--list-element">CULTURE</li>
-                <li class="header__nav--list-element">OPINION</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="header__bottom-container">
-          <div class="header__runner-list">
-            <div class="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-            <div class="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-            <div class="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
       <main class="main">
         <section class="main__news">
           <div class="main__big">
