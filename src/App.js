@@ -5,7 +5,12 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import MyNews from "./pages/MyNews/MyNews";
 import useNews from "./hooks/useNews";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
   const { news, loadNewsArticle } = useNews();
@@ -33,12 +38,8 @@ function App() {
         </Router>
         <pre>{JSON.stringify(news, null, 2)}</pre>
       </div>
-
     </>
-  )
-
-
-
+  );
 }
 
 export default App;
