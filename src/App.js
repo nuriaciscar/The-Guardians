@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
-import MyNews from "./pages/MyNews/MyNews";
+import MyNewsPage from "./pages/MyNewsPage/MyNewsPage";
 import useNews from "./hooks/useNews";
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import DetailPage from "./pages/DetailPage/DetailPage";
 
 function App() {
   const { news, loadNewsArticle } = useNews();
@@ -28,7 +29,10 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/mynews" exact>
-              <MyNews />
+              <MyNewsPage />
+            </Route>
+            <Route path="/details" exact>
+              <DetailPage />
             </Route>
             <Route path="/" exact>
               <Redirect to="/home" />

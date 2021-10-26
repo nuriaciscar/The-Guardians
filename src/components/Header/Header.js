@@ -19,9 +19,11 @@ function Header() {
             <NavLink to="/mynews" className="header-user-area__my-news" exact>
               MY NEWS
             </NavLink>
-            <button className="header-user-area__button header-user-area__button--sign-up">
-              Sign up
-            </button>
+            <NavLink to="/details" exact>
+              <button className="header-user-area__button header-user-area__button--sign-up">
+                Sign up
+              </button>
+            </NavLink>
             <button className="header-user-area__button header-user-area__button--login">
               Login
             </button>
