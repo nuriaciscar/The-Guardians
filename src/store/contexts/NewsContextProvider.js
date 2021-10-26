@@ -1,5 +1,6 @@
 import NewsContext from "./NewsContext";
 import { useReducer } from "react";
+import newsReducer from "../reducers/newsReducer";
 
 // falta newsReducer
 
