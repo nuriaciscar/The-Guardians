@@ -8,7 +8,7 @@ const MyNews = () => {
                     </div>
                     <div className="header__nav">
                         <div className="header__nav--user">
-                            <a href="#" className="header__nav-link">MY NEWS</a>
+                            <a href="h" className="header__nav-link">MY NEWS</a>
                             <button className="header__nav-sign">Sign up</button>
                             <button className="header__nav-login">Login</button>
                         </div>
@@ -51,7 +51,7 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
@@ -61,29 +61,7 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
-                                <div className="main__read-later">
-                                    <i>a</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="section-title__cards">
-                        <div className="section__card">
-                            <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
-                            <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-                            <div className="main__more">
-                                <a href="#">READ MORE</a>
-                                <div className="main__read-later">
-                                    <i>a</i>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="section__card">
-                            <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
-                            <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-                            <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
@@ -95,7 +73,7 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
@@ -105,7 +83,7 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
@@ -117,7 +95,7 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
@@ -127,7 +105,29 @@ const MyNews = () => {
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
                             <div className="main__more">
-                                <a href="#">READ MORE</a>
+                                <a href="h">READ MORE</a>
+                                <div className="main__read-later">
+                                    <i>a</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="section-title__cards">
+                        <div className="section__card">
+                            <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
+                            <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+                            <div className="main__more">
+                                <a href="h">READ MORE</a>
+                                <div className="main__read-later">
+                                    <i>a</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="section__card">
+                            <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
+                            <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+                            <div className="main__more">
+                                <a href="h">READ MORE</a>
                                 <div className="main__read-later">
                                     <i>a</i>
                                 </div>
