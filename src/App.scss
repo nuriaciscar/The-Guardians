@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+
+  &__top-container {
+    display: flex;
+    border: 1px solid black;
+  }
+
+  &__logo {
+    width: 55%;
+  }
+
+  &__nav--list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  &__runner-list {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.main {
+  &__news {
+    display: flex;
+    border: 1px solid black;
+  }
+  &__big {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 66%;
+  }
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 33%;
+  }
+  &__aside-top {
+    border-bottom: 1px solid black;
+    height: 33%;
+  }
+  &__more {
+    display: flex;
+  }
+}
+
+.section {
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+  }
+  &__card {
+    border: 1px solid black;
+  }
+  &__container-title {
+    border: 1px solid black;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+}
