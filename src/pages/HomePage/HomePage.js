@@ -1,8 +1,5 @@
-
-
 const HomePage = () => {
   return (
-
     <>
       <main className="main">
         <section className="main__news">
