@@ -1,4 +1,7 @@
-import styles from "Homepage.modules.css";
+import Card from "../../components/Card/Card";
+import CardText from "../../components/CardText/CardText";
+import MainCard from "../../components/MainCard/MainCard";
+import MediumCard from "../../components/MediumCard/MediumCard";
 
 const HomePage = () => {
   return (
@@ -43,52 +46,10 @@ const HomePage = () => {
       </header>
       <main class="main">
         <section class="main__news">
-          <div class="main__big">
-            <p>15.12.2021</p>
-            <img
-              src="./pexels-kaique-rocha-1812602.jpg"
-              alt=""
-              class="main__big-image"
-              width="300"
-              height="300"
-            />
-            <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-            <div class="main__more">
-              <a href="h">READ MORE</a>
-              <div class="main__read-later">
-                <i></i>
-                <p>Add to Read Letter</p>
-              </div>
-            </div>
-          </div>
+          <MainCard />
           <div class="main__aside">
-            <div class="main__aside-top">
-              <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                  <p>Add to Read Letter</p>
-                </div>
-              </div>
-            </div>
-            <div class="main__aside-bottom">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="100"
-                height="100"
-              />
-              <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                  <p>Add to Read Letter</p>
-                </div>
-              </div>
-            </div>
+            <CardText />
+            <MediumCard />
           </div>
         </section>
         <section class="section">
@@ -96,54 +57,9 @@ const HomePage = () => {
             <h2 class="section__title">SPORT</h2>
           </div>
           <div class="section__cards">
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
         <section class="section">
@@ -151,54 +67,9 @@ const HomePage = () => {
             <h2 class="section__title">SPORT</h2>
           </div>
           <div class="section__cards">
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
         <section class="section">
@@ -206,54 +77,9 @@ const HomePage = () => {
             <h2 class="section__title">SPORT</h2>
           </div>
           <div class="section__cards">
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
       </main>
