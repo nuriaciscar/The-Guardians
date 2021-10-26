@@ -1,47 +1,14 @@
+
+//import styles from "Homepage.modules.css";
+import Header from "../../components/Header/Header";
+
 const HomePage = () => {
   return (
-    <div className="container">
-      <header className="header">
-        <div className="header__top-container">
-          <div className="header__logo">
-            <img src="" alt="logo the guardian" />
-          </div>
-          <div className="header__nav">
-            <div className="header__nav--user">
-              <a href="h" className="header__nav-link">
-                MY NEWS
-              </a>
-              <button className="header__nav-sign">Sign up</button>
-              <button className="header__nav-login">Login</button>
-            </div>
-            <div className="header__nav--sections">
-              <ul className="header__nav--list">
-                <li className="header__nav--list-element">NEWS</li>
-                <li className="header__nav--list-element">SPORT</li>
-                <li className="header__nav--list-element">LIFESTYLE</li>
-                <li className="header__nav--list-element">CULTURE</li>
-                <li className="header__nav--list-element">OPINION</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="header__bottom-container">
-          <div className="header__runner-list">
-            <div className="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-            <div className="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-            <div className="header__runner-element">
-              <p>ALOHA</p>
-            </div>
-          </div>
-        </div>
-      </header>
-      <main className="main">
-        <section className="main__news">
-          <div className="main__big">
+    <div class="container">
+      <Header />
+      <main class="main">
+        <section class="main__news">
+          <div class="main__big">
             <p>15.12.2021</p>
             <img
               src="./pexels-kaique-rocha-1812602.jpg"
