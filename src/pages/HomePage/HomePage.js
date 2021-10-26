@@ -1,89 +1,87 @@
-import styles from "Homepage.modules.css";
-
 const HomePage = () => {
   return (
-    <div class="container">
-      <header class="header">
-        <div class="header__top-container">
-          <div class="header__logo">
+    <div className="container">
+      <header className="header">
+        <div className="header__top-container">
+          <div className="header__logo">
             <img src="" alt="logo the guardian" />
           </div>
-          <div class="header__nav">
-            <div class="header__nav--user">
-              <a href="h" class="header__nav-link">
+          <div className="header__nav">
+            <div className="header__nav--user">
+              <a href="h" className="header__nav-link">
                 MY NEWS
               </a>
-              <button class="header__nav-sign">Sign up</button>
-              <button class="header__nav-login">Login</button>
+              <button className="header__nav-sign">Sign up</button>
+              <button className="header__nav-login">Login</button>
             </div>
-            <div class="header__nav--sections">
-              <ul class="header__nav--list">
-                <li class="header__nav--list-element">NEWS</li>
-                <li class="header__nav--list-element">SPORT</li>
-                <li class="header__nav--list-element">LIFESTYLE</li>
-                <li class="header__nav--list-element">CULTURE</li>
-                <li class="header__nav--list-element">OPINION</li>
+            <div className="header__nav--sections">
+              <ul className="header__nav--list">
+                <li className="header__nav--list-element">NEWS</li>
+                <li className="header__nav--list-element">SPORT</li>
+                <li className="header__nav--list-element">LIFESTYLE</li>
+                <li className="header__nav--list-element">CULTURE</li>
+                <li className="header__nav--list-element">OPINION</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="header__bottom-container">
-          <div class="header__runner-list">
-            <div class="header__runner-element">
+        <div className="header__bottom-container">
+          <div className="header__runner-list">
+            <div className="header__runner-element">
               <p>ALOHA</p>
             </div>
-            <div class="header__runner-element">
+            <div className="header__runner-element">
               <p>ALOHA</p>
             </div>
-            <div class="header__runner-element">
+            <div className="header__runner-element">
               <p>ALOHA</p>
             </div>
           </div>
         </div>
       </header>
-      <main class="main">
-        <section class="main__news">
-          <div class="main__big">
+      <main className="main">
+        <section className="main__news">
+          <div className="main__big">
             <p>15.12.2021</p>
             <img
               src="./pexels-kaique-rocha-1812602.jpg"
               alt=""
-              class="main__big-image"
+              className="main__big-image"
               width="300"
               height="300"
             />
-            <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-            <div class="main__more">
+            <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
+            <div className="main__more">
               <a href="h">READ MORE</a>
-              <div class="main__read-later">
+              <div className="main__read-later">
                 <i></i>
                 <p>Add to Read Letter</p>
               </div>
             </div>
           </div>
-          <div class="main__aside">
-            <div class="main__aside-top">
-              <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-              <div class="main__more">
+          <div className="main__aside">
+            <div className="main__aside-top">
+              <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                   <p>Add to Read Letter</p>
                 </div>
               </div>
             </div>
-            <div class="main__aside-bottom">
+            <div className="main__aside-bottom">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="100"
                 height="100"
               />
-              <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
-              <div class="main__more">
+              <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                   <p>Add to Read Letter</p>
                 </div>
@@ -91,165 +89,165 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
           </div>
-          <div class="section__cards">
-            <div class="section__card">
+          <div className="section__cards">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
             </div>
-            <div class="section__card">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
             </div>
-            <div class="section__card">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
-          </div>
-          <div class="section__cards">
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div class="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                class="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
-                <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
           </div>
-          <div class="section__cards">
-            <div class="section__card">
+          <div className="section__cards">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
             </div>
-            <div class="section__card">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
             </div>
-            <div class="section__card">
+            <div className="section__card">
               <img
                 src="./pexels-kaique-rocha-1812602.jpg"
                 alt=""
-                class="main__big-image"
+                className="main__big-image"
                 width="200"
                 height="200"
               />
-              <p class="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div class="main__more">
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
                 <a href="h">READ MORE</a>
-                <div class="main__read-later">
+                <div className="main__read-later">
+                  <i>a</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
+          </div>
+          <div className="section__cards">
+            <div className="section__card">
+              <img
+                src="./pexels-kaique-rocha-1812602.jpg"
+                alt=""
+                className="main__big-image"
+                width="200"
+                height="200"
+              />
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
+                <a href="h">READ MORE</a>
+                <div className="main__read-later">
+                  <i>a</i>
+                </div>
+              </div>
+            </div>
+            <div className="section__card">
+              <img
+                src="./pexels-kaique-rocha-1812602.jpg"
+                alt=""
+                className="main__big-image"
+                width="200"
+                height="200"
+              />
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
+                <a href="h">READ MORE</a>
+                <div className="main__read-later">
+                  <i>a</i>
+                </div>
+              </div>
+            </div>
+            <div className="section__card">
+              <img
+                src="./pexels-kaique-rocha-1812602.jpg"
+                alt=""
+                className="main__big-image"
+                width="200"
+                height="200"
+              />
+              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
+              <div className="main__more">
+                <a href="h">READ MORE</a>
+                <div className="main__read-later">
                   <i>a</i>
                 </div>
               </div>
@@ -257,31 +255,31 @@ const HomePage = () => {
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <div class="footer__top">
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
+      <footer className="footer">
+        <div className="footer__top">
+          <div className="footer__info">
+            <p className="footer__title">THE CREATORS</p>
+            <p className="footer__text">aaaaaaaaaaaaaaa</p>
+            <p className="footer__text">nnnnnnnnnn</p>
+            <p className="footer__text">iiiiiiiiiiii</p>
           </div>
 
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
+          <div className="footer__info">
+            <p className="footer__title">THE CREATORS</p>
+            <p className="footer__text">aaaaaaaaaaaaaaa</p>
+            <p className="footer__text">nnnnnnnnnn</p>
+            <p className="footer__text">iiiiiiiiiiii</p>
           </div>
 
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
+          <div className="footer__info">
+            <p className="footer__title">THE CREATORS</p>
+            <p className="footer__text">aaaaaaaaaaaaaaa</p>
+            <p className="footer__text">nnnnnnnnnn</p>
+            <p className="footer__text">iiiiiiiiiiii</p>
           </div>
         </div>
 
-        <div class="footer__copyright">CopyRight tralalalalallalalalal</div>
+        <div className="footer__copyright">CopyRight tralalalalallalalalal</div>
       </footer>
     </div>
   );
