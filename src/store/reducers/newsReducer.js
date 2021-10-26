@@ -6,7 +6,7 @@ const newsReducer = (news, action) => {
   switch (action.type) {
     case actionTypes.loadNewsArticle:
       console.log(action.article.response);
-      //newNews = [...action]; //??
+      //newNews = [action]; //??
       break;
     case actionTypes.loadNewsList:
       newNews = [...action]; //??
