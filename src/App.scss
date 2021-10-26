@@ -22,80 +22,72 @@ body {
   &__top-container {
     display: flex;
     border: 1px solid black;
+    font-family: "Space Grotesk", sans-serif;
   }
 
-  &__logo {
+  &-logo {
     width: 55%;
   }
 
-  &__nav--list {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    border: 1px solid black;
-    width: 100%;
-    & li {
+  &-actions {
+    .header-user-area {
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      list-style: none;
-      width: 100%;
-      font-family: "Space Grotesk", sans-serif;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 30px;
+
+      &__my-news {
+        color: black;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 500;
+        margin-right: 15px;
+        width: 40px;
+      }
+
+      &__button {
+        color: white;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 16px;
+        background-color: black;
+        border-radius: 20px;
+        font-weight: 400;
+        border: none;
+        padding: 5px;
+        width: 75px;
+
+        &--sing-up {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+        &--login {
+          margin-left: 15px;
+        }
+      }
+    }
+    .header-nav {
+      &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        width: 100%;
+        padding: 30px;
+        font-family: "Space Grotesk", sans-serif;
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          list-style: none;
+          width: 100%;
+          font-family: "Space Grotesk", sans-serif;
+        }
+      }
     }
   }
 
-  &__runner-list {
+  &-runner {
     display: flex;
     justify-content: space-around;
-  }
-
-  &__nav--user {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 30px;
-  }
-
-  &__nav-link {
-    color: black;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 500;
-    margin-right: 15px;
-    width: 40px;
-  }
-  &__nav-sign {
-    color: white;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
-    background-color: black;
-    border-radius: 20px;
-    font-weight: 400;
-    border: none;
-    padding: 5px;
-    width: 75px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  &__nav-login {
-    color: white;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
-    background-color: black;
-    border-radius: 20px;
-    font-weight: 400;
-    border: none;
-    padding: 5px;
-    width: 75px;
-    margin-left: 15px;
-  }
-
-  &__nav--sections {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    width: 100%;
-    font-family: "Space Grotesk", sans-serif;
   }
 }
 
@@ -182,5 +174,33 @@ body {
     border-bottom: 1px solid black;
     width: 100%;
     height: 70px;
+  }
+}
+
+.main-article {
+  display: flex;
+  &__aside-left {
+    width: 33%;
+    border: 1px black solid;
+    display: flex;
+  }
+  &__aside-name {
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 70px;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  border: 1px black solid;
+  justify-content: center;
+  padding: 20px;
+  &__top-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

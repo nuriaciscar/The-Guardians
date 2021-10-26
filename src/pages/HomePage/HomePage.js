@@ -1,14 +1,12 @@
 
-//import styles from "Homepage.modules.css";
-import Header from "../../components/Header/Header";
 
 const HomePage = () => {
   return (
-    <div class="container">
-      <Header />
-      <main class="main">
-        <section class="main__news">
-          <div class="main__big">
+
+    <>
+      <main className="main">
+        <section className="main__news">
+          <div className="main__big">
             <p>15.12.2021</p>
             <img
               src="./pexels-kaique-rocha-1812602.jpg"
@@ -222,33 +220,7 @@ const HomePage = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <div className="footer__top">
-          <div className="footer__info">
-            <p className="footer__title">THE CREATORS</p>
-            <p className="footer__text">aaaaaaaaaaaaaaa</p>
-            <p className="footer__text">nnnnnnnnnn</p>
-            <p className="footer__text">iiiiiiiiiiii</p>
-          </div>
-
-          <div className="footer__info">
-            <p className="footer__title">THE CREATORS</p>
-            <p className="footer__text">aaaaaaaaaaaaaaa</p>
-            <p className="footer__text">nnnnnnnnnn</p>
-            <p className="footer__text">iiiiiiiiiiii</p>
-          </div>
-
-          <div className="footer__info">
-            <p className="footer__title">THE CREATORS</p>
-            <p className="footer__text">aaaaaaaaaaaaaaa</p>
-            <p className="footer__text">nnnnnnnnnn</p>
-            <p className="footer__text">iiiiiiiiiiii</p>
-          </div>
-        </div>
-
-        <div className="footer__copyright">CopyRight tralalalalallalalalal</div>
-      </footer>
-    </div>
+    </>
   );
 };
 

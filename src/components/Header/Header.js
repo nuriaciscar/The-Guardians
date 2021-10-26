@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
@@ -6,18 +7,18 @@ function Header() {
   return (
     <header className="header">
       <div className="header__top-container">
-        <div className="header-logo">
+        <NavLink to="/home" className="header-logo" exact>
           <img
             src={sourceLogo}
             className="header-logo__image"
             alt="logo of the guardian"
           />
-        </div>
+        </NavLink>
         <div className="header-actions">
           <div className="header-user-area">
-            <a href="hfjf" className="header-user-area__my-news">
+            <NavLink to="/mynews" className="header-user-area__my-news" exact>
               MY NEWS
-            </a>
+            </NavLink>
             <button className="header-user-area__button header-user-area__button--sign-up">
               Sign up
             </button>
