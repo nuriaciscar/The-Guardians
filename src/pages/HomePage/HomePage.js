@@ -1,3 +1,8 @@
+import Card from "../../components/Card/Card";
+import MainCard from "../../components/MainCard/MainCard";
+import MediumCard from "../../components/MediumCard/MediumCard";
+import CardText from "../../components/CardText/CardText";
+
 const HomePage = () => {
   return (
     <>
@@ -21,199 +26,60 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="main__aside">
-            <div className="main__aside-top">
-              <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                  <p>Add to Read Letter</p>
-                </div>
-              </div>
+        </section>
+        <div class="header__bottom-container">
+          <div class="header__runner-list">
+            <div class="header__runner-element">
+              <p>ALOHA</p>
             </div>
-            <div className="main__aside-bottom">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="100"
-                height="100"
-              />
-              <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                  <p>Add to Read Letter</p>
-                </div>
-              </div>
+            <div class="header__runner-element">
+              <p>ALOHA</p>
             </div>
+            <div class="header__runner-element">
+              <p>ALOHA</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <main class="main">
+        <section class="main__news">
+          <MainCard />
+          <div class="main__aside">
+            <CardText />
+            <MediumCard />
           </div>
         </section>
         <section className="section">
           <div className="section__container-title">
             <h2 className="section__title">SPORT</h2>
           </div>
-          <div className="section__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+
+          <div class="section__cards">
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
         <section className="section">
           <div className="section__container-title">
             <h2 className="section__title">SPORT</h2>
           </div>
-          <div className="section__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+
+          <div class="section__cards">
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
         <section className="section">
           <div className="section__container-title">
             <h2 className="section__title">SPORT</h2>
           </div>
-          <div className="section__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
+
+          <div class="section__cards">
+            <Card />
+            <Card />
+            <Card />
           </div>
         </section>
       </main>
