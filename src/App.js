@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./App.scss";
 import useNews from "./hooks/useNews";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   const { news, loadNewsArticle } = useNews();
@@ -8,7 +9,15 @@ function App() {
     loadNewsArticle();
   }, [loadNewsArticle]);
 
-  return <pre>{JSON.stringify(news, null, 2)}</pre>;
+  return (
+    <>
+      <HomePage />
+      <pre>{JSON.stringify(news, null, 2)}</pre>;
+    </>
+  )
+
+
+
 }
 
 export default App;
