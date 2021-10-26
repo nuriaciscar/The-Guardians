@@ -1,5 +1,3 @@
-import styles from "Homepage.modules.css";
-
 const HomePage = () => {
   return (
     <div class="container">

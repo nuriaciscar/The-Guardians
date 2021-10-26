@@ -38,15 +38,15 @@ const MyNews = () => {
                 </div>
             </header>
 
-            <main className="main">
-                <aside className="main__aside-left">
-                    <div className="main__aside-name">
-                        <h2 className="aside__title">SPORT</h2>
+            <main className="main-title">
+                <aside className="main-title__aside-left">
+                    <div className="main-title__aside-name">
+                        <h2 className="main-title__aside-title">SPORT</h2>
                     </div>
                 </aside>
 
-                <section className="section">
-                    <div className="section__cards">
+                <section className="section-title">
+                    <div className="section-title__cards">
                         <div className="section__card">
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
@@ -68,7 +68,7 @@ const MyNews = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="section__cards">
+                    <div className="section-title__cards">
                         <div className="section__card">
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
@@ -90,7 +90,7 @@ const MyNews = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="section__cards">
+                    <div className="section-title__cards">
                         <div className="section__card">
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
@@ -112,7 +112,7 @@ const MyNews = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="section__cards">
+                    <div className="section-title__cards">
                         <div className="section__card">
                             <img src="./pexels-kaique-rocha-1812602.jpg" alt="" className="main__big-image" width="200" height="200" />
                             <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
