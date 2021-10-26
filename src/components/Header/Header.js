@@ -1,9 +1,7 @@
-import styles from "./styles.module.scss";
-
 function Header() {
   const sourceLogo = "";
   return (
-    <header className={styles.header}>
+    <header className="header">
       <div className="headertop-container">
         <div className="headerlogo">
           <img src={sourceLogo} alt="logo of the guardian" />
