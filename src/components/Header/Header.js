@@ -24,9 +24,11 @@ function Header() {
                 Sign up
               </button>
             </NavLink>
-            <button className="header-user-area__button header-user-area__button--login">
-              Login
-            </button>
+            <NavLink to="/detailsmodify" exact>
+              <button className="header-user-area__button header-user-area__button--login">
+                Login
+              </button>
+            </NavLink>
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
