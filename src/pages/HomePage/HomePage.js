@@ -1,3 +1,5 @@
+import styles from "Homepage.modules.css";
+
 const HomePage = () => {
   return (
     <div class="container">
@@ -52,7 +54,7 @@ const HomePage = () => {
             />
             <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
             <div class="main__more">
-              <a href="#">READ MORE</a>
+              <a href="h">READ MORE</a>
               <div class="main__read-later">
                 <i></i>
                 <p>Add to Read Letter</p>
@@ -63,7 +65,7 @@ const HomePage = () => {
             <div class="main__aside-top">
               <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
               <div class="main__more">
-                <a href="#">READ MORE</a>
+                <a href="h">READ MORE</a>
                 <div class="main__read-later">
                   <i>a</i>
                   <p>Add to Read Letter</p>
@@ -80,7 +82,7 @@ const HomePage = () => {
               />
               <h3 class="main__title">TITLE OF THE MAIN NEW</h3>
               <div class="main__more">
-                <a href="#">READ MORE</a>
+                <a href="h">READ MORE</a>
                 <div class="main__read-later">
                   <i>a</i>
                   <p>Add to Read Letter</p>
