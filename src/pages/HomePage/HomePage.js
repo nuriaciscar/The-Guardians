@@ -1,3 +1,4 @@
+
 import Card from "../../components/Card/Card";
 import CardText from "../../components/CardText/CardText";
 import MainCard from "../../components/MainCard/MainCard";
@@ -50,66 +51,48 @@ const HomePage = () => {
           <div class="main__aside">
             <CardText />
             <MediumCard />
+
+
           </div>
         </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
           </div>
+
           <div class="section__cards">
             <Card />
             <Card />
             <Card />
+
           </div>
         </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
           </div>
+
           <div class="section__cards">
             <Card />
             <Card />
             <Card />
+
           </div>
         </section>
-        <section class="section">
-          <div class="section__container-title">
-            <h2 class="section__title">SPORT</h2>
+        <section className="section">
+          <div className="section__container-title">
+            <h2 className="section__title">SPORT</h2>
           </div>
+
           <div class="section__cards">
             <Card />
             <Card />
             <Card />
+
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <div class="footer__top">
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
-          </div>
-
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
-          </div>
-
-          <div class="footer__info">
-            <p class="footer__title">THE CREATORS</p>
-            <p class="footer__text">aaaaaaaaaaaaaaa</p>
-            <p class="footer__text">nnnnnnnnnn</p>
-            <p class="footer__text">iiiiiiiiiiii</p>
-          </div>
-        </div>
-
-        <div class="footer__copyright">CopyRight tralalalalallalalalal</div>
-      </footer>
-    </div>
+    </>
   );
 };
 
