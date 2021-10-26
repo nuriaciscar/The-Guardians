@@ -1,19 +1,19 @@
-const MediumCard = () => {
+const MediumCard = ({image, icon, info, text}) => {
   return (
-    <div className="main__aside-bottom">
+    <div className="main__aside-bottom" data-testid="mediumcard">
       <img
-        src="./pexels-kaique-rocha-1812602.jpg"
+        src={image}
         alt=""
         className="main__big-image"
         width="100"
         height="100"
       />
-      <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
+      <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">READ MORE</a>
+        <a href="h">{info}</a>
         <div className="main__read-later">
-          <i>a</i>
-          <p>Add to Read Letter</p>
+          <i>{icon}</i>
+          <p>{info}</p>
         </div>
       </div>
     </div>

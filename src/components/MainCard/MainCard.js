@@ -1,20 +1,20 @@
-const MainCard = () => {
+const MainCard = ({ image, text, info, icon }) => {
   return (
-    <div className="main__big">
-      <p>15.12.2021</p>
+    <div className="main__big" data-testid="maincard">
+      <p>{text}</p>
       <img
-        src="./pexels-kaique-rocha-1812602.jpg"
+        src={image}
         alt=""
         className="main__big-image"
         width="300"
         height="300"
       />
-      <h3 className="main__title">TITLE OF THE MAIN NEW</h3>
+      <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">READ MORE</a>
+        <a href="h">{info}</a>
         <div className="main__read-later">
-          <i></i>
-          <p>Add to Read Letter</p>
+          <i>{icon}</i>
+          <p>{info}</p>
         </div>
       </div>
     </div>
