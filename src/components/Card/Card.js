@@ -4,13 +4,13 @@ const Card = ({ image, text, info, icon }) => {
       <img
         src={image}
         alt=""
-        className={"main__big-image"}
+        className={"card__image"}
         width="200"
-        height="200"
+        height="100"
       />
       <p className="section__text">{text} </p>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <a href="Read More">Read More</a>
         <div className="main__read-later">
           <i>{icon}</i>
         </div>
