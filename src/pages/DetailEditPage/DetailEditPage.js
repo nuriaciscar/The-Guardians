@@ -3,7 +3,7 @@ import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = () => {
-  const { localApi, postLocalApi } = useLocalApi();
+  const { postLocalApi } = useLocalApi();
   const detailTypes = ["myListNews", "createNews"];
   const detailType = detailTypes[1];
 

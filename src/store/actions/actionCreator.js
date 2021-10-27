@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import actionTypes from "./actionTypes";
 
 export const loadNewsArticleAction = (article) => ({
