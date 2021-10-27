@@ -3,7 +3,10 @@ import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = () => {
-  const { postLocalApi } = useLocalApi();
+  // {detailType}
+  const { postLocalApi, putLocalApi } = useLocalApi();
+  //const params = useParams();
+
   const detailTypes = ["myListNews", "createNews"];
   const detailType = detailTypes[1];
 
@@ -12,7 +15,8 @@ const DetailEditPage = () => {
   const [isArticleRendered, setIsArticleRendered] = useState(
     detailType === "createNews" ? false : true
   );
-  const initialArticleData = {
+
+  let initialArticleData = {
     sectionName: "SECTION",
     imageSource: "",
     articleDate: "",
@@ -20,12 +24,30 @@ const DetailEditPage = () => {
     articleSubtitle: "",
     bodyText: "",
   };
+  /*   if (detailType === "myListNews") {
+    initialArticleData = {
+      sectionName: params[0],
+      imageSource: params[1],
+      articleDate: params[2],
+      articleTitle: params[3],
+      articleSubtitle: params[4],
+      bodyText: params[5],
+    };
+  } */
+  if (detailType === "myListNews") {
+    initialArticleData = {
+      sectionName: "SECTION",
+      imageSource:
+        "https://www.muycomputer.com/wp-content/uploads/2020/12/google.png",
+      articleDate: "19-4-202",
+      articleTitle: "HOLIIIIIIII",
+      articleSubtitle: "Holi holi holi",
+      bodyText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem, vitae eum dicta laudantium amet. Itaque facere, aut reprehenderit accusantium delectus nostrum maxime, enim repellendus, labore harum reiciendis quidem non.",
+    };
+  }
 
   const [articleData, setArticleData] = useState(initialArticleData);
-  if (detailType === "myListNews") {
-    setArticleData(5);
-    // llenar con el get a API local
-  }
 
   function changeArticleData(event) {
     setArticleData({
@@ -43,11 +65,18 @@ const DetailEditPage = () => {
       setIsSubmitDisabled(false);
     else setIsSubmitDisabled(true);
   }
-  const onSubmitForm = (event) => {
+
+  const onPostSubmitForm = (event) => {
     event.preventDefault();
     setIsFormShown(false);
     setIsArticleRendered(true);
     postLocalApi(articleData);
+  };
+
+  const onPutSubmitForm = (event) => {
+    event.preventDefault();
+    setIsFormShown(false);
+    putLocalApi(articleData);
   };
 
   function renderEditButton() {
@@ -90,7 +119,7 @@ const DetailEditPage = () => {
       <form
         className="detail-page-form"
         autoComplete="off"
-        onSubmit={onSubmitForm}
+        onSubmit={isArticleRendered ? onPutSubmitForm : onPostSubmitForm}
       >
         <div className="detail-page-form__container">
           <label htmlFor="sectionName">Section Name</label>
@@ -154,22 +183,39 @@ const DetailEditPage = () => {
     );
   }
 
-  function renderMyListNews() {}
+  function renderMyListNews() {
+    return (
+      <>
+        <main className="main-article">
+          <aside className="main-article__aside-left">
+            <div className="main-article__aside-name">
+              <h2 className="aside__title">{articleData.sectionName}</h2>
+            </div>
+            {isFormShown ? renderForm() : renderEditButton()}
+          </aside>
+          {renderArticle()}
+        </main>
+      </>
+    );
+  }
 
   function renderCreateNews() {
     return (
-      <main className="main-article">
-        <pre>{JSON.stringify(articleData, null, 2)}</pre>
-        <aside className="main-article__aside-left">
-          <div className="main-article__aside-name">
-            <h2 className="aside__title">{articleData.sectionName}</h2>
-          </div>
-          {isFormShown ? renderForm() : renderEditButton()}
-        </aside>
-        {isArticleRendered ? renderArticle() : ""}
-      </main>
+      <>
+        <main className="main-article">
+          <aside className="main-article__aside-left">
+            <div className="main-article__aside-name">
+              <h2 className="aside__title">{articleData.sectionName}</h2>
+            </div>
+            {isFormShown ? renderForm() : renderEditButton()}
+          </aside>
+          {isArticleRendered ? renderArticle() : ""}
+        </main>
+      </>
     );
   }
+
+  console.log(detailType);
 
   return (
     <>
