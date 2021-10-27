@@ -11,7 +11,7 @@ const useLocalApi = () => {
   let { localApi, dispatchLocalApi } = useContext(NewsContext);
 
   const getLocalApi = useCallback(async () => {
-    const response = await fetch("url");
+    const response = await fetch("https://api-guardians.herokuapp.com/news");
 
     let localApi = await response.json();
 
@@ -20,18 +20,22 @@ const useLocalApi = () => {
 
   const postLocalApi = useCallback(
     async (postData) => {
-      const response = await fetch("url");
-
-      let postedData = await response.json();
-
-      dispatchLocalApi(postLocalApiAction(postedData));
+      const response = await fetch("https://api-guardians.herokuapp.com/news", {
+        method: "POST",
+        body: JSON.stringify(postData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      postData = await response.json();
+      dispatchLocalApi(postLocalApiAction(postData));
     },
     [dispatchLocalApi]
   );
 
   const deleteLocalApi = useCallback(
     async (id) => {
-      const response = await fetch("url");
+      const response = await fetch("https://api-guardians.herokuapp.com/news");
 
       let deletedData = await response.json();
 
@@ -42,7 +46,7 @@ const useLocalApi = () => {
 
   const putLocalApi = useCallback(
     async (id, putData) => {
-      const response = await fetch("url");
+      const response = await fetch("https://api-guardians.herokuapp.com/news");
 
       let puttedData = await response.json();
 
