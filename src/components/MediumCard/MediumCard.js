@@ -1,6 +1,8 @@
-const MediumCard = ({image, icon, info, text}) => {
+import { NavLink } from "react-router-dom";
+
+const MediumCard = ({ mediumCard: { image, icon, info, text } }) => {
   return (
-    <div className="main__aside-bottom" data-testid="mediumcard">
+    <div className="main__aside-bottom">
       <img
         src={image}
         alt=""
@@ -10,10 +12,12 @@ const MediumCard = ({image, icon, info, text}) => {
       />
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <NavLink to="/details" className="main__more__read">
+          Read More
+        </NavLink>
         <div className="main__read-later">
           <i>{icon}</i>
-          <p>{info}</p>
+          <p>Add to Read Later</p>
         </div>
       </div>
     </div>

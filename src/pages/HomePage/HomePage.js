@@ -1,7 +1,7 @@
 import Card from "../../components/Card/Card";
-import MainCard from "../../components/MainCard/MainCard";
 import MediumCard from "../../components/MediumCard/MediumCard";
 import CardText from "../../components/CardText/CardText";
+import MainCard from "../../components/MainCard/MainCard";
 
 const HomePage = () => {
   return (

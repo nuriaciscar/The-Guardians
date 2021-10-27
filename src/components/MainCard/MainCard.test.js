@@ -1,28 +1,31 @@
 import MainCard from "./MainCard";
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Given a component MainCard", () => {
   describe("When it receives a card", () => {
-    test("Then it should render its image, text, Read More and an icon", () => {
+    test("Then it should render its image, text and an icon", () => {
       let mainCard = {
+        date: "today",
         image: "hola.png",
-        text: "Hola",
-        info: "Read More",
+        text: "Hey",
         icon: "a",
       };
-
       render(
-        <MainCard
-          image={mainCard.image}
-          text={mainCard.text}
-          info={mainCard.info}
-          icon={mainCard.icon}
-        />
+        <Router>
+          <MainCard mainCard={mainCard} />
+        </Router>
       );
 
-      const card = screen.getByTestId("maincard");
+      const date = screen.getByText(mainCard.date);
+      const image = screen.getByRole("img", "");
+      const text = screen.getByText(mainCard.text);
+      const icon = screen.getByText(mainCard.icon);
 
-      expect(card).toHaveTextContent(mainCard.info);
+      expect(date).toBeInTheDocument();
+      expect(image).toBeInTheDocument();
+      expect(text).toBeInTheDocument();
+      expect(icon).toBeInTheDocument();
     });
   });
 });

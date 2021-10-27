@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-const Card = ({ image, text, info, icon }) => {
+const Card = ({ card: { image, text, icon } }) => {
   return (
-    <div className="section__card" data-testid="square">
+    <div className="section__card">
       <img
         src={image}
         alt=""
@@ -24,5 +24,4 @@ const Card = ({ image, text, info, icon }) => {
   );
 };
 
-// content.fields.thumbnail
 export default Card;

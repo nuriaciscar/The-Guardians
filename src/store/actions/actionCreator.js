@@ -9,3 +9,8 @@ export const loadNewsListAction = (newsList) => ({
   type: actionTypes.loadNewsList,
   newsList,
 });
+
+export const creatCard = (newsList) => ({
+  type: actionTypes.createCard,
+  newsList,
+});

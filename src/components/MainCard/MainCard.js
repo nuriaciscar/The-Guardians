@@ -1,7 +1,9 @@
-const MainCard = ({ image, text, info, icon }) => {
+import { NavLink } from "react-router-dom";
+
+const MainCard = ({ mainCard: { date, image, text, icon } }) => {
   return (
-    <div className="main__big" data-testid="maincard">
-      <p>{text}</p>
+    <div className="main__big">
+      <p>{date}</p>
       <img
         src={image}
         alt=""
@@ -11,10 +13,12 @@ const MainCard = ({ image, text, info, icon }) => {
       />
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <NavLink to="/details" className="main__more__read">
+          Read More
+        </NavLink>
         <div className="main__read-later">
           <i>{icon}</i>
-          <p>{info}</p>
+          <p>Add to Read Later</p>
         </div>
       </div>
     </div>
