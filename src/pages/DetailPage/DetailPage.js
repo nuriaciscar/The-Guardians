@@ -10,7 +10,7 @@ const DetailPage = ({
     <main className="main-article">
       <aside className="main-article__aside-left">
         <div className="main-article__aside-name">
-          <h2 className="aside__title">{sectionName.toUpperCase()}</h2>
+          <h2 className="aside__title">{sectionName}</h2>
         </div>
       </aside>
       <article className="article">
