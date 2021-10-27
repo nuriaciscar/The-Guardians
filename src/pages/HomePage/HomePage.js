@@ -20,6 +20,7 @@ const HomePage = () => {
   let date = "";
   let image = "";
   let id = "";
+
   let title = "";
   let titleCartText = "";
   let idText = "";
