@@ -1,28 +1,28 @@
 import MediumCard from "./MediumCard";
-const { render, screen } = require("@testing-library/react");
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Given a component MainCard", () => {
   describe("When it receives a card", () => {
-    test("Then it should render its image, text, Read More and an icon", () => {
+    test("Then it should render its image, text and an icon", () => {
       let mediumCard = {
         image: "hola.png",
         text: "Hola",
-        info: "Read More",
         icon: "a",
       };
-
       render(
-        <MediumCard
-          image={mediumCard.image}
-          text={mediumCard.text}
-          info={mediumCard.info}
-          icon={mediumCard.icon}
-        />
+        <Router>
+          <MediumCard mediumCard={mediumCard} />
+        </Router>
       );
 
-      const card = screen.getByTestId("mediumcard");
+      const image = screen.getByRole("img", "");
+      const text = screen.getByText(mediumCard.text);
+      const icon = screen.getByText(mediumCard.icon);
 
-      expect(card).toHaveTextContent(mediumCard.info);
+      expect(image).toBeInTheDocument();
+      expect(text).toBeInTheDocument();
+      expect(icon).toBeInTheDocument();
     });
   });
 });

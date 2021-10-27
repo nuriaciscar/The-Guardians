@@ -1,26 +1,26 @@
 import CardText from "./CardText";
-const { render, screen } = require("@testing-library/react");
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Given a component CardText", () => {
   describe("When it receives a cardText", () => {
-    test("Then it should render its text, Read More and an icon", () => {
+    test("Then it should render its text and an icon", () => {
       let cardText = {
         text: "Hola",
-        info: "Read More",
         icon: "a",
       };
 
       render(
-        <CardText
-          text={cardText.text}
-          info={cardText.info}
-          icon={cardText.icon}
-        />
+        <Router>
+          <CardText cardText={cardText} />
+        </Router>
       );
 
-      const card = screen.getByTestId("cardtext");
+      const text = screen.getByText(cardText.text);
+      const icon = screen.getByText(cardText.icon);
 
-      expect(card).toHaveTextContent(cardText.text);
+      expect(text).toBeInTheDocument();
+      expect(icon).toBeInTheDocument();
     });
   });
 });
