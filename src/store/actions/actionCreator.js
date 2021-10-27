@@ -41,7 +41,8 @@ export const deleteLocalApiAction = (id) => ({
   id,
 });
 
-export const putLocalApiAction = (putData) => ({
+export const putLocalApiAction = (putData, id) => ({
   type: actionTypes.putLocalApi,
   putData,
+  id,
 });

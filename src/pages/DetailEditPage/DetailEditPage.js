@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./DetailEditPage.scss";
+import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = () => {
+  const { localApi, postLocalApi } = useLocalApi();
   const detailTypes = ["myListNews", "createNews"];
   const detailType = detailTypes[1];
 
@@ -45,7 +47,7 @@ const DetailEditPage = () => {
     event.preventDefault();
     setIsFormShown(false);
     setIsArticleRendered(true);
-    //changeArticleData(ArticleData); ////// Aixo va al Post o Edit
+    postLocalApi(articleData);
   };
 
   function renderEditButton() {
