@@ -26,11 +26,14 @@ function App() {
             <Route path="/mynews" exact>
               <MyNewsPage />
             </Route>
-            <Route path="/details" exact>
+            <Route path="/detail" exact>
               <DetailPage />
             </Route>
-            <Route path="/detailsmodify" exact>
-              <DetailEditPage />
+            <Route path="/detailEditPost" exact>
+              <DetailEditPage detailType={"createNews"} />
+            </Route>
+            <Route path="/detailEditPut" exact>
+              <DetailEditPage detailType={"myListNews"} />
             </Route>
             <Route path="/" exact>
               <Redirect to="/home" />

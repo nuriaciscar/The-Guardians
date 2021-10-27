@@ -23,17 +23,18 @@ function Header() {
               MY NEWS
             </NavLink>
 
-            <NavLink to="/details" exact>
+            <NavLink to="/detail" exact>
               <button className="header-user-area__button header-user-area__button--sign-up">
                 Sign up
               </button>
-            </NavLink>            <NavLink to="/detailsmodify" exact>
+            </NavLink>
+            <NavLink to="/detailEditPost" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>
             </NavLink>
 
-            <NavLink to="/detailsmodify" exact>
+            <NavLink to="/detailEditPut" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>
@@ -72,4 +73,3 @@ function Header() {
 }
 
 export default Header;
-
