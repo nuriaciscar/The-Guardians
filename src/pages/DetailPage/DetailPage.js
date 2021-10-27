@@ -1,11 +1,11 @@
-const DetailPage = () => {
-  const sectionName = "";
-  const articleDate = "";
-  const imageSource = "";
-  const articleTitle = "";
-  const articleSubtitle = "";
-  const bodyText = "";
-
+const DetailPage = ({
+  sectionName,
+  articleDate,
+  imageSource,
+  articleTitle,
+  articleSubtitle,
+  bodyText,
+}) => {
   return (
     <main className="main-article">
       <aside className="main-article__aside-left">
