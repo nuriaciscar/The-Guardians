@@ -1,4 +1,4 @@
-const MediumCard = ({image, icon, info, text}) => {
+const MediumCard = ({ image, icon, text }) => {
   return (
     <div className="main__aside-bottom" data-testid="mediumcard">
       <img
@@ -10,10 +10,10 @@ const MediumCard = ({image, icon, info, text}) => {
       />
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <a href="h">a</a>
         <div className="main__read-later">
           <i>{icon}</i>
-          <p>{info}</p>
+          <p></p>
         </div>
       </div>
     </div>

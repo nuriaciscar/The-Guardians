@@ -1,12 +1,12 @@
-const CardText = ({ text, info, icon }) => {
+const CardText = ({ text }) => {
   return (
     <div className="main__aside-top" data-testid="cardtext">
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <a href="h">a</a>
         <div className="main__read-later">
-          <i>{icon}</i>
-          <p>{text}</p>
+          <i></i>
+
         </div>
       </div>
     </div>

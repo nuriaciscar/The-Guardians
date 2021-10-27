@@ -1,7 +1,9 @@
-const MainCard = ({ image, text, info, icon }) => {
+
+const MainCard = ({ date, image, title, info }) => {
+
   return (
     <div className="main__big" data-testid="maincard">
-      <p>{text}</p>
+      <p>{date}</p>
       <img
         src={image}
         alt=""
@@ -9,11 +11,11 @@ const MainCard = ({ image, text, info, icon }) => {
         width="300"
         height="300"
       />
-      <h3 className="main__title">{text}</h3>
+      <h3 className="main__title">{title}</h3>
       <div className="main__more">
         <a href="h">{info}</a>
         <div className="main__read-later">
-          <i>{icon}</i>
+          <i></i>
           <p>{info}</p>
         </div>
       </div>

@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import MyNewsPage from "./pages/MyNewsPage/MyNewsPage";
-import useNews from "./hooks/useNews";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,10 +15,6 @@ import DetailPage from "./pages/DetailPage/DetailPage";
 import DetailEditPage from "./pages/DetailEditPage/DetailEditPage";
 
 function App() {
-  const { news, loadNewsArticle } = useNews();
-  useEffect(() => {
-    loadNewsArticle();
-  }, [loadNewsArticle]);
 
   return (
     <>
@@ -44,7 +40,6 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-        <pre>{JSON.stringify(news, null, 2)}</pre>
       </div>
     </>
   );

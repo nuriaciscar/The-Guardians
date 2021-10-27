@@ -27,7 +27,12 @@ function Header() {
               <button className="header-user-area__button header-user-area__button--sign-up">
                 Sign up
               </button>
+            </NavLink>            <NavLink to="/detailsmodify" exact>
+              <button className="header-user-area__button header-user-area__button--login">
+                Login
+              </button>
             </NavLink>
+
             <NavLink to="/detailsmodify" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
@@ -67,3 +72,4 @@ function Header() {
 }
 
 export default Header;
+
