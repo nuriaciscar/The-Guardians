@@ -1,4 +1,3 @@
-
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -15,7 +14,6 @@ import DetailPage from "./pages/DetailPage/DetailPage";
 import DetailEditPage from "./pages/DetailEditPage/DetailEditPage";
 
 function App() {
-
   return (
     <>
       <div className="container">

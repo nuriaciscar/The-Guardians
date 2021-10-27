@@ -26,4 +26,4 @@ yarn-error.log*
 
 /.sonar
 /.scannerwork
-
+sonar-project.properties
