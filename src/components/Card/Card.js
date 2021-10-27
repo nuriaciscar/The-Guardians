@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Card = ({ card: { image, text, icon } }) => {
+  const [iconState, setIconState] = useState(false);
   return (
     <div className="section__card">
       <img
@@ -17,7 +19,8 @@ const Card = ({ card: { image, text, icon } }) => {
         </NavLink>
 
         <div className="main__read-later">
-          <i>{icon}</i>
+          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={() => setIconState(!iconState)} />
+          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={() => setIconState(!iconState)} />
         </div>
       </div>
     </div>

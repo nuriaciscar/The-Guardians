@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const MediumCard = ({ mediumCard: { image, icon, text } }) => {
+  const [iconState, setIconState] = useState(false);
   return (
     <div className="main__aside-bottom">
       <img
@@ -16,8 +18,8 @@ const MediumCard = ({ mediumCard: { image, icon, text } }) => {
           Read More
         </NavLink>
         <div className="main__read-later">
-          <i>{icon}</i>
-          <p>Add to Read Later</p>
+          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={() => setIconState(!iconState)} />
+          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={() => setIconState(!iconState)} />
         </div>
       </div>
     </div>
