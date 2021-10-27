@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
+import { HashLink, NavHashLink } from "react-router-hash-link";
 
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
@@ -12,6 +13,8 @@ function Header() {
             src={sourceLogo}
             className="header-logo__image"
             alt="logo of the guardian"
+            height="80"
+            width="200"
           />
         </NavLink>
         <div className="header-actions">
@@ -28,7 +31,14 @@ function Header() {
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
-              <li className="header-nav__list-element">NEWS</li>
+              <li className="header-nav__list-element">
+                <NavHashLink
+                  to="/some/path#with-hash-fragment"
+                  activeClassName="selected"
+                >
+                  NEWS
+                </NavHashLink>
+              </li>
               <li className="header-nav__list-element">SPORT</li>
               <li className="header-nav__list-element">LIFESTYLE</li>
               <li className="header-nav__list-element">CULTURE</li>
