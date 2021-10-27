@@ -5,14 +5,15 @@ const newsReducer = (news, action) => {
 
   switch (action.type) {
     case actionTypes.loadNewsArticle:
-      console.log(action.article.response);
-      //newNews = [action]; //??
+      newNews = action.article.response;
+      //console.log(newNews);
       break;
     case actionTypes.loadNewsList:
-      newNews = [...action]; //??
+      newNews = action.newsList;
       break;
 
     default:
+      newNews = news;
     // default: throw error o que envie el estado tal cual
   }
 

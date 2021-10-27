@@ -1,4 +1,4 @@
-const Card = ({ image, text, info, icon }) => {
+const Card = ({ image, text, icon }) => {
   return (
     <div className="section__card" data-testid="square">
       <img
@@ -10,7 +10,7 @@ const Card = ({ image, text, info, icon }) => {
       />
       <p className="section__text">{text} </p>
       <div className="main__more">
-        <a href="h">{info}</a>
+        <a href="h">a</a>
         <div className="main__read-later">
           <i>{icon}</i>
         </div>
@@ -18,6 +18,5 @@ const Card = ({ image, text, info, icon }) => {
     </div>
   );
 };
-
 // content.fields.thumbnail
 export default Card;
