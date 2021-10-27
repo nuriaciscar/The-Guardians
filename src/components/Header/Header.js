@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
-import { HashLink, NavHashLink } from "react-router-hash-link";
+// import { HashLink, NavHashLink } from "react-router-hash-link";
 
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
@@ -32,12 +32,9 @@ function Header() {
           <div className="header-nav">
             <ul className="header-nav__list">
               <li className="header-nav__list-element">
-                <NavHashLink
-                  to="/some/path#with-hash-fragment"
-                  activeClassName="selected"
-                >
+                {/* <NavHashLink to="/mynews" activeClassName="selected">
                   NEWS
-                </NavHashLink>
+                </NavHashLink> */}
               </li>
               <li className="header-nav__list-element">SPORT</li>
               <li className="header-nav__list-element">LIFESTYLE</li>
