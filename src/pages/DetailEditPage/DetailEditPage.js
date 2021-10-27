@@ -1,12 +1,6 @@
 import { useState } from "react";
 import "./DetailEditPage.scss";
 
-/* 
-recibe una variable detailType:
-
-- myListNews (modificables)
-- createNews (modificable y vacía)
- */
 const DetailEditPage = () => {
   const detailTypes = ["myListNews", "createNews"];
   const detailType = detailTypes[1];

@@ -85,12 +85,14 @@ const HomePage = () => {
       {newsSport.length !== 0 && news.response !== undefined && (
         <main className="main">
           <section className="main__news">
-            <MainCard date={date} image={image} title={title} key={id} />
+            <MainCard mainCard={{ date, image, title }} key={id} />
             <div className="main__aside">
-              <CardText text={titleCartText} key={idText} />
+              <CardText cardText={{ text: titleCartText }} key={idText} />
               <MediumCard
-                image={imageCartMedium}
-                text={titleCartMedium}
+                mediumCard={{
+                  image: imageCartMedium,
+                  text: titleCartMedium,
+                }}
                 key={idMedium}
               />
             </div>
@@ -104,8 +106,10 @@ const HomePage = () => {
               <button onClick={reloadSport}>-</button>
               {newsSport.map((newCardSport) => (
                 <Card
-                  text={newCardSport.webTitle}
-                  image={newCardSport.fields.thumbnail}
+                  card={{
+                    text: newCardSport.webTitle,
+                    image: newCardSport.fields.thumbnail,
+                  }}
                   key={newCardSport.id}
                 />
               ))}
@@ -121,8 +125,10 @@ const HomePage = () => {
               <button onClick={reloadScience}>-</button>
               {newsScience.map((newCardScience) => (
                 <Card
-                  text={newCardScience.webTitle}
-                  image={newCardScience.fields.thumbnail}
+                  card={{
+                    text: newCardScience.webTitle,
+                    image: newCardScience.fields.thumbnail,
+                  }}
                   key={newCardScience.id}
                 />
               ))}
@@ -138,8 +144,10 @@ const HomePage = () => {
               <button onClick={reloadLifeStyle}>-</button>
               {newsLifeStyle.map((newCardLifeStyle, i) => (
                 <Card
-                  text={newCardLifeStyle.webTitle}
-                  image={newCardLifeStyle.fields.thumbnail}
+                  card={{
+                    text: newCardLifeStyle.webTitle,
+                    image: newCardLifeStyle.fields.thumbnail,
+                  }}
                   key={newCardLifeStyle.id}
                 />
               ))}

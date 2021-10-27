@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const MediumCard = ({ mediumCard: { image, icon, info, text } }) => {
+const MediumCard = ({ mediumCard: { image, icon, text } }) => {
   return (
     <div className="main__aside-bottom">
       <img
