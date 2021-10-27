@@ -24,3 +24,24 @@ export const loadNewsListLifeStyleAction = (newsListLifeStyle) => ({
   type: actionTypes.loadNewsListLifeStyle,
   newsListLifeStyle,
 });
+
+export const getLocalApiAction = (getData) => ({
+  type: actionTypes.getLocalApi,
+  getData,
+});
+
+export const postLocalApiAction = (postData) => ({
+  type: actionTypes.postLocalApi,
+  postData,
+});
+
+export const deleteLocalApiAction = (id) => ({
+  type: actionTypes.deleteLocalApi,
+  id,
+});
+
+export const putLocalApiAction = (putData, id) => ({
+  type: actionTypes.putLocalApi,
+  putData,
+  id,
+});

@@ -246,3 +246,12 @@ footer {
   color: white;
   font-family: "Cardo", serif;
 }
+
+.show {
+  display: inline;
+  cursor: pointer;
+}
+.notShow {
+  display: none;
+  cursor: pointer;
+}
