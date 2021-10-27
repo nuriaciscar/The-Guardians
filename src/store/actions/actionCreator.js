@@ -10,7 +10,17 @@ export const loadNewsListAction = (newsList) => ({
   newsList,
 });
 
-export const creatCard = (newsList) => ({
-  type: actionTypes.createCard,
-  newsList,
+export const loadNewsListSportAction = (newsListSport) => ({
+  type: actionTypes.loadNewsListSport,
+  newsListSport,
+});
+
+export const loadNewsListScienceAction = (newsListScience) => ({
+  type: actionTypes.loadNewsListScience,
+  newsListScience,
+});
+
+export const loadNewsListLifeStyleAction = (newsListLifeStyle) => ({
+  type: actionTypes.loadNewsListLifeStyle,
+  newsListLifeStyle,
 });

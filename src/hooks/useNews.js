@@ -1,33 +1,61 @@
 import NewsContext from "../store/contexts/NewsContext";
 import { useContext, useCallback } from "react";
 import {
-  loadNewsArticleAction,
   loadNewsListAction,
+  loadNewsListScienceAction,
+  loadNewsListSportAction,
+  loadNewsListLifeStyleAction,
 } from "../store/actions/actionCreator";
 
 const useNews = () => {
-  let { news, dispatch } = useContext(NewsContext);
+  let { news, dispatch, newsSport, dispatchSport, newsScience, dispatchScience, newsLifeStyle, dispatchLifeStyle } = useContext(NewsContext);
 
-  const loadNewsArticle = useCallback(async () => {
+  const loadNewsList = useCallback(async (section, pageNum) => {
     const response = await fetch(
-      "https://content.guardianapis.com/football/live/2021/oct/23/crystal-palace-v-newcastle-leeds-v-wolves-and-more-football-clockwatch-live?api-key=54d47472-427a-49dc-b6af-d65d241bc415&show-fields=all"
-    );
-    let news = await response.json();
-    dispatch(loadNewsArticleAction(news));
-  }, [dispatch]);
 
-  const loadNewsList = useCallback(async () => {
-    const response = await fetch(
-      "http://content.guardianapis.com/search?section=culture&from-date=1990-03-24&to-date=2021-03-04&order-by=newest&show-fields=all&page-size=200&api-key=54d47472-427a-49dc-b6af-d65d241bc415&page=2&show-elements=all"
-    );
+      `${process.env.REACT_APP_API_URL}${section}${process.env.REACT_APP_API_DATE}${pageNum}${process.env.REACT_APP_API_KEY}`);
+
+    /* "http://content.guardianapis.com/search?section=culture&from-date=2015-03-06&to-date=2021-03-06&order-by=relevance&show-fields=all&page-size=10&page=6&api-key=54d47472-427a-49dc-b6af-d65d241bc415")*/
     let news = await response.json();
+
     dispatch(loadNewsListAction(news));
   }, [dispatch]);
 
+  const loadNewsListSport = useCallback(async (section, pageNum) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}${section}${process.env.REACT_APP_API_DATE}${pageNum}${process.env.REACT_APP_API_KEY}`);
+
+
+    let newsSports = await response.json();
+    dispatchSport(loadNewsListSportAction(newsSports));
+  }, [dispatchSport]);
+
+  const loadNewsListScience = useCallback(async (section, pageNum) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}${section}${process.env.REACT_APP_API_DATE}${pageNum}${process.env.REACT_APP_API_KEY}`);
+    let newsScience = await response.json();
+    dispatchScience(loadNewsListScienceAction(newsScience));
+  }, [dispatchScience]);
+
+  const loadNewsListLifeStyle = useCallback(async (section, pageNum) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}${section}${process.env.REACT_APP_API_DATE}${pageNum}${process.env.REACT_APP_API_KEY}`);
+
+
+    let newsLifeStyle = await response.json();
+    dispatchLifeStyle(loadNewsListLifeStyleAction(newsLifeStyle));
+  }, [dispatchLifeStyle]);
+
   return {
     news,
-    loadNewsArticle,
+    newsSport,
+    newsScience,
+    newsLifeStyle,
+    loadNewsListSport,
+    loadNewsListScience,
+    loadNewsListLifeStyle,
     loadNewsList,
+
   };
 };
 

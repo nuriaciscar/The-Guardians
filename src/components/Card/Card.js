@@ -23,5 +23,4 @@ const Card = ({ card: { image, text, icon } }) => {
     </div>
   );
 };
-
 export default Card;
