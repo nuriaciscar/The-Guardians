@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 // import { HashLink, NavHashLink } from "react-router-hash-link";
 
-
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
 
@@ -34,6 +33,11 @@ function Header() {
               </button>
             </NavLink>
 
+            <NavLink to="/detailsmodify" exact>
+              <button className="header-user-area__button header-user-area__button--login">
+                Login
+              </button>
+            </NavLink>
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
@@ -68,3 +72,4 @@ function Header() {
 }
 
 export default Header;
+
