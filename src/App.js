@@ -12,6 +12,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import DetailPage from "./pages/DetailPage/DetailPage";
+import DetailEditPage from "./pages/DetailEditPage/DetailEditPage";
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/details" exact>
               <DetailPage />
+            </Route>
+            <Route path="/detailsmodify" exact>
+              <DetailEditPage />
             </Route>
             <Route path="/" exact>
               <Redirect to="/home" />
