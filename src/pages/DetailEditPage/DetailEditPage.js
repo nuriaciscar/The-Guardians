@@ -8,7 +8,7 @@ const DetailEditPage = () => {
   //const params = useParams();
 
   const detailTypes = ["myListNews", "createNews"];
-  const detailType = detailTypes[1];
+  const detailType = detailTypes[0];
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);

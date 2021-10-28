@@ -4,6 +4,7 @@ import CardText from "../../components/CardText/CardText";
 import MainCard from "../../components/MainCard/MainCard";
 import useNews from "../../hooks/useNews";
 import { useEffect, useState } from "react";
+import Header from "../../components/Header/Header";
 
 const HomePage = () => {
   const {
@@ -80,12 +81,19 @@ const HomePage = () => {
     imageCartMedium = newsList[2].fields.thumbnail;
     idMedium = newsList[2].id;
   }
+
   return (
     <>
       {newsSport.length !== 0 && news.response !== undefined && (
         <main className="main">
-          <section className="main__news">
-            <MainCard mainCard={{ date, image, title }} key={id} />
+          <a className="goUp hide" href="#header" id="js-top">
+            <img src="up.png"></img>
+          </a>
+
+          <section className="main__content" id="news">
+            <div className="main__news">
+              <MainCard mainCard={{ date, image, text: title }} key={id} />
+            </div>
             <div className="main__aside">
               <CardText cardText={{ text: titleCartText }} key={idText} />
               <MediumCard
@@ -98,8 +106,8 @@ const HomePage = () => {
             </div>
           </section>
           <section className="section">
-            <div className="section__container-title">
-              <h2 className="section__title">SPORT</h2>
+            <div className="section__container-title" id="sports">
+              <h2 className="section__title">SPORTS</h2>
             </div>
 
             <div className="section__cards">
@@ -117,7 +125,7 @@ const HomePage = () => {
             </div>
           </section>
           <section className="section">
-            <div className="section__container-title">
+            <div className="section__container-title" id="science">
               <h2 className="section__title">SCIENCE</h2>
             </div>
 
@@ -136,7 +144,7 @@ const HomePage = () => {
             </div>
           </section>
           <section className="section">
-            <div className="section__container-title">
+            <div className="section__container-title" id="lifestyle">
               <h2 className="section__title">LIFESTYLE</h2>
             </div>
 
