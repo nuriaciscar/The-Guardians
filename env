@@ -1,3 +1,0 @@
-REACT_APP_API_URL=https://content.guardianapis.com/search?section=
-REACT_APP_API_DATE=&from-date=2015-03-06&to-date=2021-03-06&order-by=newest&show-fields=all&page-size=3&page=
-REACT_APP_API_KEY=&api-key=54d47472-427a-49dc-b6af-d65d241bc415

@@ -3,12 +3,8 @@ import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = ({ detailType }) => {
-  // {detailType}
   const { postLocalApi, putLocalApi } = useLocalApi();
   //const params = useParams();
-  console.log(detailType);
-  //const detailTypes = ["myListNews", "createNews"];
-  //const detailType = detailTypes[1];
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);

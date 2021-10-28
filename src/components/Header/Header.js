@@ -34,7 +34,7 @@ function Header() {
               </button>
             </NavLink>
 
-            <NavLink to="/detailEditPut" exact>
+            <NavLink to="/detailEditPut/:SECTION/:" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>

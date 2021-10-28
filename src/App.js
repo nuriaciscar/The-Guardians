@@ -12,8 +12,18 @@ import {
 } from "react-router-dom";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import DetailEditPage from "./pages/DetailEditPage/DetailEditPage";
+import useArticle from "./hooks/useArticle";
+import { useEffect } from "react";
 
 function App() {
+  const { article, loadArticleById } = useArticle();
+  useEffect(() => {
+    loadArticleById(
+      "culture/2020/dec/28/foie-gras-truffles-birds-drowned-in-brandy-lunch-queen-victoria-waddesdon-manor-kitchens"
+    );
+  }, [loadArticleById]);
+
+  console.log("app", article);
   return (
     <>
       <div className="container">
