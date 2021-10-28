@@ -7,13 +7,23 @@ const articleReducer = (article, action) => {
     case actionTypes.loadArticleById:
       const articleData = action.id.response.content;
       const date = articleData.fields.firstPublicationDate;
+      const bodyText = articleData.fields.bodyText
+        .split(".")
+        .reduce((stringSoFar, stringToPutInPlace, index) => {
+          let string = stringSoFar + stringToPutInPlace + ".";
+          if (index % 5 === 4) string += "&&&";
+          return string;
+        }, "")
+        .split("&&&")
+        .map((paragraph) => <p>{paragraph}</p>);
+
       newArticle = {
         sectionName: articleData.sectionId,
         imageSource: articleData.fields.thumbnail,
         articleDate: date.slice(0, 10),
         articleTitle: articleData.webTitle,
         articleSubtitle: articleData.fields.trailText,
-        bodyText: articleData.fields.bodyText,
+        bodyText: bodyText,
         id: articleData.id,
       };
       break;
