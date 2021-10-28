@@ -21,22 +21,17 @@ function Header() {
               MY NEWS
             </NavLink>
 
-            <NavLink to="/detail" exact>
-              <button className="header-user-area__button header-user-area__button--sign-up">
-                Sign up
-              </button>
-            </NavLink>
-            <NavLink to="/detailEditPost" exact>
-              <button className="header-user-area__button header-user-area__button--login">
-                Login
-              </button>
-            </NavLink>
+            <button className="header-user-area__button header-user-area__button--sign-up">
+              Sign up
+            </button>
 
-            <NavLink to="/detailEditPut" exact>
-              <button className="header-user-area__button header-user-area__button--login">
-                Login
-              </button>
-            </NavLink>
+            <button className="header-user-area__button header-user-area__button--login">
+              Login
+            </button>
+
+            <button className="header-user-area__button header-user-area__button--login">
+              Login
+            </button>
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">

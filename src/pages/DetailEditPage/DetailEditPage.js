@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
+import { useLocation } from "react-router";
 
 const DetailEditPage = ({ detailType }) => {
-  const { postLocalApi, putLocalApi } = useLocalApi();
+  const { postLocalApi, putLocalApi, apiArticle, getLocalApiArticle } =
+    useLocalApi();
 
-  //const params = useParams();
+  let query = useLocation().search;
+  let id;
+
+  if (query) {
+    query = query
+      .slice(1, query.length)
+      .split("&")
+      .map((param) => param.split("="));
+    id = query.filter((array) => array[0] === "id")[0][1];
+  } else {
+    id = null;
+  }
+
+  useEffect(() => {
+    if (id !== null) getLocalApiArticle(id);
+  }, [getLocalApiArticle, id]);
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
@@ -20,31 +37,20 @@ const DetailEditPage = ({ detailType }) => {
     articleTitle: "",
     articleSubtitle: "",
     bodyText: "",
+    id: "", /////////////////////////////posar al submit
   };
-  /*   if (detailType === "myListNews") {
-    initialArticleData = {
-      sectionName: params[0],
-      imageSource: params[1],
-      articleDate: params[2],
-      articleTitle: params[3],
-      articleSubtitle: params[4],
-      bodyText: params[5],
-    };
-  } */
-  if (detailType === "myListNews") {
-    initialArticleData = {
-      sectionName: "SECTION",
-      imageSource:
-        "https://www.muycomputer.com/wp-content/uploads/2020/12/google.png",
-      articleDate: "19-4-202",
-      articleTitle: "HOLIIIIIIII",
-      articleSubtitle: "Holi holi holi",
-      bodyText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem, vitae eum dicta laudantium amet. Itaque facere, aut reprehenderit accusantium delectus nostrum maxime, enim repellendus, labore harum reiciendis quidem non.",
-    };
-  }
 
   const [articleData, setArticleData] = useState(initialArticleData);
+
+  const waitInitialData = async (detailType) => {
+    initialArticleData = await (detailType === "myListNews"
+      ? apiArticle
+      : initialArticleData);
+    setArticleData(initialArticleData);
+    return initialArticleData;
+  };
+
+  waitInitialData(detailType);
 
   function changeArticleData(event) {
     setArticleData({
@@ -103,11 +109,9 @@ const DetailEditPage = ({ detailType }) => {
             alt="thumbnail of the article. Api not descriptive enough, sorry"
             className="main__big-image"
           />
-          <h3 className="main__title__detail">{articleData.articleTitle}</h3>
-          <p className="main__subtitle__detail">
-            {articleData.articleSubtitle}
-          </p>
-          <p className="main__text__detail">{articleData.bodyText}</p>
+          <h3 className="main__title">{articleData.articleTitle}</h3>
+          <p className="main__subtitle">{articleData.articleSubtitle}</p>
+          {articleData.bodyText}
         </div>
       </article>
     );

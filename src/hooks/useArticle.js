@@ -10,7 +10,6 @@ const useArticle = () => {
       const url = `${process.env.REACT_APP_API_ARTICLE_URL}${id}${process.env.REACT_APP_API_KEY_ARTICLE}`;
       const response = await fetch(url);
       let article = await response.json();
-
       dispatchArticle(loadArticleByIdAction(article));
     },
     [dispatchArticle]

@@ -8,5 +8,6 @@ const actionTypes = {
   deleteLocalApi: "DELETE_LOCAL_API",
   putLocalApi: "PUT_LOCAL_API",
   loadArticleById: "LOAD_ARTICLE_BY_ID",
+  getApiArticleById: "LOAD_API_ARTICLE_BY_ID",
 };
 export default actionTypes;
