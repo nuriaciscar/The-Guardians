@@ -1,13 +1,12 @@
 import actionTypes from "../actions/actionTypes";
 
-const articleReducer = (article, action) => {
+const localArticleReducer = (article, action) => {
   let newArticle;
 
   switch (action.type) {
-    case actionTypes.loadArticleById:
-      const articleData = action.id.response.content;
-      const date = articleData.fields.firstPublicationDate;
-      const bodyText = articleData.fields.bodyText
+    case actionTypes.getApiArticleById:
+      const articleData = action.id[0];
+      const bodyText = articleData.bodyText
         .split(".")
         .reduce((stringSoFar, stringToPutInPlace, index) => {
           let string = stringSoFar + stringToPutInPlace + ".";
@@ -18,14 +17,15 @@ const articleReducer = (article, action) => {
         .map((paragraph) => <p key={paragraph.slice(0, 20)}>{paragraph}</p>);
 
       newArticle = {
-        sectionName: articleData.sectionId,
-        imageSource: articleData.fields.thumbnail,
-        articleDate: date.slice(0, 10),
-        articleTitle: articleData.webTitle,
-        articleSubtitle: articleData.fields.trailText,
+        sectionName: articleData.sectionName,
+        imageSource: articleData.imageSource,
+        articleDate: articleData.articleDate,
+        articleTitle: articleData.articleTitle,
+        articleSubtitle: articleData.articleSubtitle,
         bodyText: bodyText,
         id: articleData.id,
       };
+
       break;
 
     default:
@@ -35,4 +35,4 @@ const articleReducer = (article, action) => {
   return newArticle;
 };
 
-export default articleReducer;
+export default localArticleReducer;
