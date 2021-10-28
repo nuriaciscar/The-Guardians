@@ -43,13 +43,15 @@ const MediumCard = ({
 
   return (
     <div className="main__aside-bottom">
-      <img
-        src={image}
-        alt=""
-        className="main__aside-image"
-        width="100"
-        height="100"
-      />
+      <NavLink to={`/detail/?id=${id}`} >
+        <img
+          src={image}
+          alt=""
+          className="main__aside-image"
+          width="100"
+          height="100"
+        />
+      </NavLink>
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
         <NavLink to={`/detail/?id=${id}`} className="main__more__read-medium">
@@ -70,24 +72,8 @@ const MediumCard = ({
             className={iconState ? "show" : "notShow"}
             width="17"
             height="17"
-            onClick={postNewOnClick}
           />
           <p>Add to Read Later</p>
-          <img
-            src="/images/bookmark_false.png"
-            alt="icono false"
-            className={iconState ? "notShow" : "show"}
-            width="17"
-            height="17"
-            onClick={postNewOnClick}
-          />
-          <img
-            src="/images/bookmark_true.png"
-            alt="icono false"
-            className={iconState ? "show" : "notShow"}
-            width="17"
-            height="17"
-          />
         </div>
       </div>
     </div>

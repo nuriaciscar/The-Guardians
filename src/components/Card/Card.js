@@ -47,13 +47,15 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
 
   return (
     <div className="section__card">
-      <img
-        src={image}
-        alt=""
-        className={"card__image"}
-        width="200"
-        height="100"
-      />
+      <NavLink to={placeHolder === "homepage" ? `/detail/?id=${idHomepage}` : `detailEditPut/?id=${initialArticleData.id}`} className="main__more__read">
+        <img
+          src={image}
+          alt=""
+          className={"card__image"}
+          width="200"
+          height="100"
+        />
+      </NavLink>
       <p className="section__text">{text} </p>
       <div className="main__more__card">
         <NavLink to={placeHolder === "homepage" ? `/detail/?id=${idHomepage}` : `detailEditPut/?id=${initialArticleData.id}`} className="main__more__read">
