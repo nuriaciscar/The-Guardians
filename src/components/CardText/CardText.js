@@ -9,6 +9,7 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
   useEffect(() => {
     getLocalApi();
   }, [getLocalApi]);
+
   const initialArticleData = {
     sectionName: sectionName,
     imageSource: image,
@@ -21,7 +22,8 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
 
   const postNewOnClick = () => {
     setIconState(!iconState);
-    const repeatedNew = localApi.some((element) => element.id === initialArticleData.id);
+    const repeatedNew = localApi.some((element) => element.articleTitle === initialArticleData.articleTitle);
+
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }

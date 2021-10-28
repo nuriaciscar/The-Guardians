@@ -21,7 +21,7 @@ const MediumCard = ({ mediumCard: { date, image, text, sectionName, articleSubti
 
   const postNewOnClick = () => {
     setIconState(!iconState);
-    const repeatedNew = localApi.some((element) => element.id === initialArticleData.id);
+    const repeatedNew = localApi.some((element) => element.articleTitle === initialArticleData.articleTitle);
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }

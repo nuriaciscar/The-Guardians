@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useLocalApi from "../../hooks/useLocalApi";
 
-const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, id, placeHolder } }) => {
+const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, id, placeHolder, idHomepage } }) => {
   const [iconState, setIconState,] = useState(false);
   const { postLocalApi } = useLocalApi();
   const { getLocalApi, localApi, deleteLocalApi } = useLocalApi();
@@ -19,7 +19,6 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
     articleSubtitle: articleSubtitle,
     bodyText: body,
     id: id,
-    idDelete: id,
   };
 
   const postNewOnClick = () => {
@@ -27,7 +26,7 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
       setIconState(!iconState);
     }
 
-    const repeatedNew = localApi.some((element) => element.id === initialArticleData.id);
+    const repeatedNew = localApi.some((element) => element.articleTitle === initialArticleData.articleTitle);
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }
@@ -52,10 +51,9 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
         width="200"
         height="100"
       />
-
       <p className="section__text">{text} </p>
       <div className="main__more__card">
-        <NavLink to="/details" className="main__more__read">
+        <NavLink to={`/details/?id=${placeHolder === "homepage" ? idHomepage : initialArticleData.id}`} className="main__more__read">
           READ MORE
         </NavLink>
         <div className="main__read-later">
