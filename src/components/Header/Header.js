@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
-import HomePage from "../../pages/HomePage/HomePage";
+
 // import { HashLink, NavHashLink } from "react-router-hash-link";
 
 function Header() {

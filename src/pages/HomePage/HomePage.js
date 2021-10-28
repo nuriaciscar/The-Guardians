@@ -4,7 +4,6 @@ import CardText from "../../components/CardText/CardText";
 import MainCard from "../../components/MainCard/MainCard";
 import useNews from "../../hooks/useNews";
 import { useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
 
 const HomePage = () => {
   const {
