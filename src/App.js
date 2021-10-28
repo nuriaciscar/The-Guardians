@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage/HomePage";
 import MyNewsPage from "./pages/MyNewsPage/MyNewsPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+// import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 import {
   BrowserRouter as Router,
@@ -39,9 +39,9 @@ function App() {
             <Route path="/" exact>
               <Redirect to="/home" />
             </Route>
-            <Route path="*" exact>
+            {/* <Route path="*" exact>
               <Redirect to="/NotFoundPage" />
-            </Route>
+            </Route> */}
           </Switch>
           <Footer />
         </Router>
