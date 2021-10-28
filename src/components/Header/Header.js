@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
-// import { HashLink, NavHashLink } from "react-router-hash-link";
-
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
 
@@ -23,17 +21,19 @@ function Header() {
             <NavLink to="/mynews" className="header-user-area__my-news" exact>
               MY NEWS
             </NavLink>
-            <NavLink to="/details" exact>
+
+            <NavLink to="/detail" exact>
               <button className="header-user-area__button header-user-area__button--sign-up">
                 Sign up
               </button>
-            </NavLink>{" "}
-            <NavLink to="/detailsmodify" exact>
+            </NavLink>
+            <NavLink to="/detailEditPost" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>
             </NavLink>
-            <NavLink to="/detailsmodify" exact>
+
+            <NavLink to="/detailEditPut/:SECTION/:" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>

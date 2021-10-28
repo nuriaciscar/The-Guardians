@@ -1,0 +1,12 @@
+footer {
+  background-color: black;
+  color: white;
+  font-family: "Cardo", serif;
+  display: flex;
+  flex-direction: row;
+  font-family: "Cardo", serif;
+
+  &__title {
+    font-size: 30px;
+  }
+}

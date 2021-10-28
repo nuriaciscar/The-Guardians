@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Card = ({ card: { image, text, icon } }) => {
+const Card = ({ card: { image, text } }) => {
   const [iconState, setIconState] = useState(false);
   return (
     <div className="section__card">
