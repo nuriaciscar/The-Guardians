@@ -39,3 +39,20 @@ footer {
   padding-right: 50px;
   font-size: 12px;
 }
+
+@media (max-width: 600px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer__info {
+  }
+
+  .footer__top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

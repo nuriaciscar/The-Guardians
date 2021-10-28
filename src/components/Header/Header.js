@@ -64,13 +64,15 @@ function Header() {
       <div className="header-bottom-container">
         <div className="header-runner">
           <div className="header-runner__element">
-            <p>ALOHA</p>
+            <p className="header-runner__element__text__color">Breaking News</p>
           </div>
           <div className="header-runner__element">
-            <p>ALOHA</p>
+            <p className="header-runner__element__text">
+              Mario is exploting his students
+            </p>
           </div>
           <div className="header-runner__element">
-            <p>ALOHA</p>
+            <p className="header-runner__element__text">...Again</p>
           </div>
         </div>
       </div>

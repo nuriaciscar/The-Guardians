@@ -24,20 +24,22 @@ const MyNewsPage = () => {
 
           <section className="section-title__mynews">
             {localApi.map((newNewLocal) => (
-              <Card
-                className="card__mynews"
-                card={{
-                  text: newNewLocal.articleTitle,
-                  image: newNewLocal.imageSource,
-                  date: newNewLocal.articleDate,
-                  sectionName: newNewLocal.sectionName,
-                  articleSubtitle: newNewLocal.articleSubtitle,
-                  body: newNewLocal.bodyText,
-                  placeHolder: "mynews",
-                  id: newNewLocal.id,
-                }}
-                key={newNewLocal.id}
-              />
+              <div className="card__mynews">
+                <Card
+                  className="card__mynews__single"
+                  card={{
+                    text: newNewLocal.articleTitle,
+                    image: newNewLocal.imageSource,
+                    date: newNewLocal.articleDate,
+                    sectionName: newNewLocal.sectionName,
+                    articleSubtitle: newNewLocal.articleSubtitle,
+                    body: newNewLocal.bodyText,
+                    placeHolder: "mynews",
+                    id: newNewLocal.id,
+                  }}
+                  key={newNewLocal.id}
+                />
+              </div>
             ))}
             <NavLink to="/detailEditPost" exact>
               <div className="createNew">

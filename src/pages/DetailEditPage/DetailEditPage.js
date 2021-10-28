@@ -148,7 +148,7 @@ const DetailEditPage = ({ detailType }) => {
           <input
             id="articleDate"
             type="text"
-            placeholder="posar format"
+            placeholder="DD/MM/YYYY"
             value={articleData.articleDate}
             onChange={changeArticleData}
             required
