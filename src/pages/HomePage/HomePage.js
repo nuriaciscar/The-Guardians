@@ -128,7 +128,7 @@ const HomePage = () => {
 
           <section className="main__content" id="news">
             <div className="main__news">
-              <MainCard mainCard={{ date, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
+              <MainCard mainCard={{ date, id, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
             </div>
             <div className="main__aside">
               <CardText cardText={{
@@ -138,7 +138,8 @@ const HomePage = () => {
                 sectionName: sectionNameText,
                 articleSubtitle: articleSubtitleText,
                 body: bodyText,
-                placeHolder: "homepage"
+                placeHolder: "homepage",
+                id: idText
               }} key={idText} />
               <MediumCard
                 mediumCard={{
@@ -149,6 +150,7 @@ const HomePage = () => {
                   articleSubtitle: articleSubtitleMedium,
                   body: bodyMedium,
                   placeHolder: "homepage",
+                  id: idMedium
 
                 }}
                 key={idMedium}

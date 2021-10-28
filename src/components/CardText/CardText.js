@@ -17,7 +17,6 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
     articleTitle: text,
     articleSubtitle: articleSubtitle,
     bodyText: body,
-    id: id
   };
 
   const postNewOnClick = () => {
@@ -29,17 +28,18 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
     }
   }
 
+
+
   return (
     <div className="main__aside-top">
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <NavLink to="/details/asdf" className="main__more__read">
+        <NavLink to={`/detail/?id=${id}`} className="main__more__read">
           Read More
         </NavLink>
         <div className="main__read-later">
           <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
-          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={postNewOnClick} />
-
+          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" />
         </div>
       </div>
     </div>

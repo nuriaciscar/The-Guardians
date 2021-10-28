@@ -42,6 +42,9 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
     }
   }, [placeHolder]);
 
+  // detailEditPut/?id=1
+  // detail/?id=
+
   return (
     <div className="section__card">
       <img
@@ -53,7 +56,7 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
       />
       <p className="section__text">{text} </p>
       <div className="main__more__card">
-        <NavLink to={`/details/?id=${placeHolder === "homepage" ? idHomepage : initialArticleData.id}`} className="main__more__read">
+        <NavLink to={placeHolder === "homepage" ? `/detail/?id=${idHomepage}` : `detailEditPut/?id=${initialArticleData.id}`} className="main__more__read">
           READ MORE
         </NavLink>
         <div className="main__read-later">

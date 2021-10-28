@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useLocalApi from "../../hooks/useLocalApi";
 
-const MainCard = ({ mainCard: { date, image, title, sectionName, articleSubtitle, body, placeHolder } }) => {
+const MainCard = ({ mainCard: { date, image, title, sectionName, articleSubtitle, body, placeHolder, id } }) => {
   const [iconState, setIconState] = useState(false);
   const initialArticleData = {
     sectionName: sectionName,
@@ -29,7 +29,6 @@ const MainCard = ({ mainCard: { date, image, title, sectionName, articleSubtitle
       postLocalApi(initialArticleData);
     }
   }
-
   return (
     <div className="main__big">
       <p>{date}</p>
@@ -42,12 +41,12 @@ const MainCard = ({ mainCard: { date, image, title, sectionName, articleSubtitle
       />
       <h3 className="main__title">{title}</h3>
       <div className="main__more">
-        <NavLink to="/details" className="main__more__read">
+        <NavLink to={`/detail/?id=${id}`} className="main__more__read">
           READ MORE
         </NavLink>
         <div className="main__read-later">
           <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
-          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" /*onClick={ }*/ />
+          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" />
         </div>
       </div>
     </div>
