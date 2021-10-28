@@ -5,8 +5,7 @@ import newsReducerSport from "../reducers/newsReducerSport";
 import newsReducerScience from "../reducers/newsReducerScience";
 import newsReducerLifeStyle from "../reducers/newsReducerLifeStyle";
 import localApiReducer from "../reducers/localApiReducer";
-
-// falta newsReducer
+import articleReducer from "../reducers/articleReducer";
 
 function NewsContextProvider({ children }) {
   const [news, dispatch] = useReducer(newsReducer, []);
@@ -17,6 +16,7 @@ function NewsContextProvider({ children }) {
     []
   );
   const [localApi, dispatchLocalApi] = useReducer(localApiReducer, []);
+  const [article, dispatchArticle] = useReducer(articleReducer, []);
 
   return (
     <NewsContext.Provider
@@ -31,6 +31,8 @@ function NewsContextProvider({ children }) {
         dispatchLifeStyle,
         localApi,
         dispatchLocalApi,
+        article,
+        dispatchArticle,
       }}
     >
       {children}

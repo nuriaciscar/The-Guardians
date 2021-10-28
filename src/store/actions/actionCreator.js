@@ -1,10 +1,5 @@
 import actionTypes from "./actionTypes";
 
-export const loadNewsArticleAction = (article) => ({
-  type: actionTypes.loadNewsArticle,
-  article,
-});
-
 export const loadNewsListAction = (newsList) => ({
   type: actionTypes.loadNewsList,
   newsList,
@@ -43,5 +38,10 @@ export const deleteLocalApiAction = (id) => ({
 export const putLocalApiAction = (putData, id) => ({
   type: actionTypes.putLocalApi,
   putData,
+  id,
+});
+
+export const loadArticleByIdAction = (id) => ({
+  type: actionTypes.loadArticleById,
   id,
 });

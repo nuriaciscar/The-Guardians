@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
-import "./Header.scss";
-// import { HashLink, NavHashLink } from "react-router-hash-link";
 
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
 
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="header__top-container">
         <NavLink to="/home" className="header-logo" exact>
           <img
@@ -23,17 +21,18 @@ function Header() {
               MY NEWS
             </NavLink>
 
-            <NavLink to="/details" exact>
+            <NavLink to="/detail" exact>
               <button className="header-user-area__button header-user-area__button--sign-up">
                 Sign up
               </button>
-            </NavLink>            <NavLink to="/detailsmodify" exact>
+            </NavLink>
+            <NavLink to="/detailEditPost" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>
             </NavLink>
 
-            <NavLink to="/detailsmodify" exact>
+            <NavLink to="/detailEditPut" exact>
               <button className="header-user-area__button header-user-area__button--login">
                 Login
               </button>
@@ -41,15 +40,23 @@ function Header() {
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
-              <li className="header-nav__list-element">
-                {/* <NavHashLink to="/mynews" activeClassName="selected">
-                  NEWS
-                </NavHashLink> */}
-              </li>
-              <li className="header-nav__list-element">SPORT</li>
+              <a href="#news" className="header-nav__list-element">
+                NEWS
+              </a>
+              <a href="#sports" className="header-nav__list-element">
+                SPORTS
+              </a>
+              <a href="#science" className="header-nav__list-element">
+                SCIENCE
+              </a>
+              <a href="#lifestyle" className="header-nav__list-element">
+                LIFESTYLE
+              </a>
+
+              {/* <li className="header-nav__list-element">SPORT</li>
               <li className="header-nav__list-element">LIFESTYLE</li>
               <li className="header-nav__list-element">CULTURE</li>
-              <li className="header-nav__list-element">OPINION</li>
+              <li className="header-nav__list-element">OPINION</li> */}
             </ul>
           </div>
         </div>
@@ -72,4 +79,3 @@ function Header() {
 }
 
 export default Header;
-

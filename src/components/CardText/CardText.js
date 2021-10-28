@@ -37,6 +37,7 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
         <div className="main__read-later">
           <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
           <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={postNewOnClick} />
+
         </div>
       </div>
     </div>

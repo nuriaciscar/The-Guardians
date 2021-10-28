@@ -52,14 +52,17 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
         width="200"
         height="100"
       />
-      <p className="section__text">{text}</p>
-      <div className="main__more">
+
+      <p className="section__text">{text} </p>
+      <div className="main__more__card">
         <NavLink to="/details" className="main__more__read">
-          Read More
+          READ MORE
         </NavLink>
         <div className="main__read-later">
+
           <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
           <img src="/images/bookmark_true.png" alt="icono true" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={deleteOnClick} />
+
         </div>
       </div>
     </div>

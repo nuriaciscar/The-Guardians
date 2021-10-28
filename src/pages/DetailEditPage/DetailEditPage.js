@@ -2,17 +2,18 @@ import { useState } from "react";
 import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
 
-const DetailEditPage = () => {
-  const { postLocalApi } = useLocalApi();
-  const detailTypes = ["myListNews", "createNews"];
-  const detailType = detailTypes[1];
+const DetailEditPage = ({ detailType }) => {
+  const { postLocalApi, putLocalApi } = useLocalApi();
+
+  //const params = useParams();
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
   const [isArticleRendered, setIsArticleRendered] = useState(
     detailType === "createNews" ? false : true
   );
-  const initialArticleData = {
+
+  let initialArticleData = {
     sectionName: "SECTION",
     imageSource: "",
     articleDate: "",
@@ -20,12 +21,30 @@ const DetailEditPage = () => {
     articleSubtitle: "",
     bodyText: "",
   };
+  /*   if (detailType === "myListNews") {
+    initialArticleData = {
+      sectionName: params[0],
+      imageSource: params[1],
+      articleDate: params[2],
+      articleTitle: params[3],
+      articleSubtitle: params[4],
+      bodyText: params[5],
+    };
+  } */
+  if (detailType === "myListNews") {
+    initialArticleData = {
+      sectionName: "SECTION",
+      imageSource:
+        "https://www.muycomputer.com/wp-content/uploads/2020/12/google.png",
+      articleDate: "19-4-202",
+      articleTitle: "HOLIIIIIIII",
+      articleSubtitle: "Holi holi holi",
+      bodyText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem, vitae eum dicta laudantium amet. Itaque facere, aut reprehenderit accusantium delectus nostrum maxime, enim repellendus, labore harum reiciendis quidem non.",
+    };
+  }
 
   const [articleData, setArticleData] = useState(initialArticleData);
-  if (detailType === "myListNews") {
-    setArticleData(5);
-    // llenar con el get a API local
-  }
 
   function changeArticleData(event) {
     setArticleData({
@@ -43,11 +62,18 @@ const DetailEditPage = () => {
       setIsSubmitDisabled(false);
     else setIsSubmitDisabled(true);
   }
-  const onSubmitForm = (event) => {
+
+  const onPostSubmitForm = (event) => {
     event.preventDefault();
     setIsFormShown(false);
     setIsArticleRendered(true);
     postLocalApi(articleData);
+  };
+
+  const onPutSubmitForm = (event) => {
+    event.preventDefault();
+    setIsFormShown(false);
+    putLocalApi(articleData);
   };
 
   function renderEditButton() {
@@ -66,10 +92,10 @@ const DetailEditPage = () => {
     return (
       <article className="article">
         <div className="article__content">
-          <div className="article__top-image">
+          <div className="article__top-image__detail">
             <p>{articleData.articleDate}</p>
-            <i></i>
-            <p>Add to Read Letter</p>
+
+            <p>Add to Read Later</p>
           </div>
 
           <img
@@ -77,9 +103,11 @@ const DetailEditPage = () => {
             alt="thumbnail of the article. Api not descriptive enough, sorry"
             className="main__big-image"
           />
-          <h3 className="main__title">{articleData.articleTitle}</h3>
-          <p className="main__subtitle">{articleData.articleSubtitle}</p>
-          <p>{articleData.bodyText}</p>
+          <h3 className="main__title__detail">{articleData.articleTitle}</h3>
+          <p className="main__subtitle__detail">
+            {articleData.articleSubtitle}
+          </p>
+          <p className="main__text__detail">{articleData.bodyText}</p>
         </div>
       </article>
     );
@@ -90,10 +118,12 @@ const DetailEditPage = () => {
       <form
         className="detail-page-form"
         autoComplete="off"
-        onSubmit={onSubmitForm}
+        onSubmit={isArticleRendered ? onPutSubmitForm : onPostSubmitForm}
       >
         <div className="detail-page-form__container">
-          <label htmlFor="sectionName">Section Name</label>
+          <label className="detail-page__label" htmlFor="sectionName">
+            Section Name
+          </label>
           <input
             id="sectionName"
             type="text"
@@ -101,7 +131,9 @@ const DetailEditPage = () => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="imageSource">Image Source</label>
+          <label className="detail-page__label" htmlFor="imageSource">
+            Image Source
+          </label>
           <input
             id="imageSource"
             type="text"
@@ -110,7 +142,9 @@ const DetailEditPage = () => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleDate">Date</label>
+          <label className="detail-page__label" htmlFor="articleDate">
+            Date
+          </label>
           <input
             id="articleDate"
             type="text"
@@ -119,7 +153,9 @@ const DetailEditPage = () => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleTitle">Title</label>
+          <label className="detail-page__label" htmlFor="articleTitle">
+            Title
+          </label>
           <input
             id="articleTitle"
             type="text"
@@ -127,7 +163,9 @@ const DetailEditPage = () => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleSubtitle">Subtitle</label>
+          <label className="detail-page__label" htmlFor="articleSubtitle">
+            Subtitle
+          </label>
           <input
             id="articleSubtitle"
             type="text"
@@ -135,8 +173,11 @@ const DetailEditPage = () => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="bodyText">Text of the article</label>
+          <label className="detail-page__label" htmlFor="bodyText">
+            Text of the article
+          </label>
           <textarea
+            className="detail-page__text-area"
             id="bodyText"
             value={articleData.bodyText}
             onChange={changeArticleData}
@@ -154,20 +195,35 @@ const DetailEditPage = () => {
     );
   }
 
-  function renderMyListNews() {}
+  function renderMyListNews() {
+    return (
+      <>
+        <main className="main-article">
+          <aside className="main-article__aside-left">
+            <div className="main-article__aside-name">
+              <h2 className="aside__title">{articleData.sectionName}</h2>
+            </div>
+            {isFormShown ? renderForm() : renderEditButton()}
+          </aside>
+          {renderArticle()}
+        </main>
+      </>
+    );
+  }
 
   function renderCreateNews() {
     return (
-      <main className="main-article">
-        <pre>{JSON.stringify(articleData, null, 2)}</pre>
-        <aside className="main-article__aside-left">
-          <div className="main-article__aside-name">
-            <h2 className="aside__title">{articleData.sectionName}</h2>
-          </div>
-          {isFormShown ? renderForm() : renderEditButton()}
-        </aside>
-        {isArticleRendered ? renderArticle() : ""}
-      </main>
+      <>
+        <main className="main-article">
+          <aside className="main-article__aside-left">
+            <div className="main-article__aside-name">
+              <h2 className="aside__title">{articleData.sectionName}</h2>
+            </div>
+            {isFormShown ? renderForm() : renderEditButton()}
+          </aside>
+          {isArticleRendered ? renderArticle() : ""}
+        </main>
+      </>
     );
   }
 
