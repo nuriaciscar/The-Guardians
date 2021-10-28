@@ -53,7 +53,6 @@ a {
 
   &__top-container {
     display: flex;
-
     font-family: "Space Grotesk", sans-serif;
   }
 
@@ -131,6 +130,20 @@ a {
     justify-content: space-around;
     border-top: 0.5px solid black;
     border-bottom: 0.5px solid black;
+    font-family: "Cardo", serif;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-left: 70px;
+
+    &__element__text {
+      font-weight: 600;
+      color: black;
+    }
+
+    &__element__text__color {
+      font-weight: 600;
+      color: #f66e44;
+    }
   }
 }
 
@@ -241,7 +254,8 @@ a {
 }
 
 .main__more__read {
-  margin-right: 35px;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 .main__more__card {
   display: flex;
@@ -288,6 +302,7 @@ a {
     border-bottom: 1px solid black;
     width: 100%;
     height: 70px;
+    text-transform: uppercase;
   }
 }
 .section {
@@ -424,6 +439,9 @@ a {
 }
 
 @media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
   img {
     filter: none;
   }
@@ -481,14 +499,78 @@ a {
       align-items: flex-start;
     }
   }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-
-    &__top {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 }
+
+// &__top-container {
+//   display: flex;
+//   font-family: "Space Grotesk", sans-serif;
+// }
+
+// &-logo {
+//   width: 50%;
+//   padding: 50px;
+//   border: none;
+// }
+
+// &-actions {
+//   width: 420px;
+
+//   .header-user-area {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//     padding-top: 15px;
+//     padding-bottom: 15px;
+//     border: none;
+
+//     &__my-news {
+//       color: black;
+//       font-family: "Space Grotesk", sans-serif;
+//       font-weight: 500;
+//       width: 40px;
+//       white-space: nowrap;
+//       margin-right: 10px;
+//       margin-left: 30px;
+
+//       &:hover {
+//         color: #f66e44;
+//       }
+//     }
+
+//     &__button {
+//       color: white;
+//       font-family: "Space Grotesk", sans-serif;
+//       font-size: 16px;
+//       background-color: black;
+//       border-radius: 20px;
+//       font-weight: 400;
+//       border: none;
+//       padding: 5px;
+//       width: 75px;
+//       &:hover {
+//         background-color: #f66e44;
+//       }
+//     }
+//   }
+//   .header-nav {
+//     &__list {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-around;
+//       list-style: none;
+//       width: 100%;
+//       padding-top: 30px;
+//       padding-bottom: 30px;
+//       padding-left: 30px;
+//       font-family: "Space Grotesk", sans-serif;
+//       li {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-around;
+//         list-style: none;
+//         width: 100%;
+//         font-family: "Space Grotesk", sans-serif;
+//       }
+//     }
+//   }
+// }

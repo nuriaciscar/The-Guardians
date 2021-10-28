@@ -21,22 +21,13 @@ function Header() {
               MY NEWS
             </NavLink>
 
-
             <button className="header-user-area__button header-user-area__button--sign-up">
               Sign up
             </button>
 
-
             <button className="header-user-area__button header-user-area__button--login">
               Login
             </button>
-
-
-
-            <button className="header-user-area__button header-user-area__button--login">
-              Login
-            </button>
-
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
@@ -59,13 +50,15 @@ function Header() {
       <div className="header-bottom-container">
         <div className="header-runner">
           <div className="header-runner__element">
-            <p>RUNNER ELEMENT</p>
+            <p className="header-runner__element__text__color">Breaking News</p>
           </div>
           <div className="header-runner__element">
-            <p>RUNNER ELEMENT</p>
+            <p className="header-runner__element__text">
+              Mario is exploting his students
+            </p>
           </div>
           <div className="header-runner__element">
-            <p>RUNNER ELEMENT</p>
+            <p className="header-runner__element__text">...Again</p>
           </div>
         </div>
       </div>
