@@ -4,6 +4,8 @@ import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = ({ detailType }) => {
   const { postLocalApi, putLocalApi } = useLocalApi();
+  const [iconState, setIconState] = useState(false);
+
   //const params = useParams();
 
   const [isFormShown, setIsFormShown] = useState(false);
@@ -91,10 +93,25 @@ const DetailEditPage = ({ detailType }) => {
     return (
       <article className="article">
         <div className="article__content">
-          <div className="article__top-image">
+          <div className="article__top-image__detail">
             <p>{articleData.articleDate}</p>
-            <i></i>
-            <p>Add to Read Letter</p>
+            <img
+              src="/images/bookmark_false.png"
+              alt="icono false"
+              className={iconState ? "notShow" : "show"}
+              width="17"
+              height="17"
+              onClick={() => setIconState(!iconState)}
+            />
+            <img
+              src="/images/bookmark_true.png"
+              alt="icono false"
+              className={iconState ? "show" : "notShow"}
+              width="17"
+              height="17"
+              onClick={() => setIconState(!iconState)}
+            />
+            <p>Add to Read Later</p>
           </div>
 
           <img
@@ -102,9 +119,11 @@ const DetailEditPage = ({ detailType }) => {
             alt="thumbnail of the article. Api not descriptive enough, sorry"
             className="main__big-image"
           />
-          <h3 className="main__title">{articleData.articleTitle}</h3>
-          <p className="main__subtitle">{articleData.articleSubtitle}</p>
-          <p>{articleData.bodyText}</p>
+          <h3 className="main__title__detail">{articleData.articleTitle}</h3>
+          <p className="main__subtitle__detail">
+            {articleData.articleSubtitle}
+          </p>
+          <p className="main__text__detail">{articleData.bodyText}</p>
         </div>
       </article>
     );
@@ -118,7 +137,9 @@ const DetailEditPage = ({ detailType }) => {
         onSubmit={isArticleRendered ? onPutSubmitForm : onPostSubmitForm}
       >
         <div className="detail-page-form__container">
-          <label htmlFor="sectionName">Section Name</label>
+          <label className="detail-page__label" htmlFor="sectionName">
+            Section Name
+          </label>
           <input
             id="sectionName"
             type="text"
@@ -126,7 +147,9 @@ const DetailEditPage = ({ detailType }) => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="imageSource">Image Source</label>
+          <label className="detail-page__label" htmlFor="imageSource">
+            Image Source
+          </label>
           <input
             id="imageSource"
             type="text"
@@ -135,7 +158,9 @@ const DetailEditPage = ({ detailType }) => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleDate">Date</label>
+          <label className="detail-page__label" htmlFor="articleDate">
+            Date
+          </label>
           <input
             id="articleDate"
             type="text"
@@ -144,7 +169,9 @@ const DetailEditPage = ({ detailType }) => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleTitle">Title</label>
+          <label className="detail-page__label" htmlFor="articleTitle">
+            Title
+          </label>
           <input
             id="articleTitle"
             type="text"
@@ -152,7 +179,9 @@ const DetailEditPage = ({ detailType }) => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="articleSubtitle">Subtitle</label>
+          <label className="detail-page__label" htmlFor="articleSubtitle">
+            Subtitle
+          </label>
           <input
             id="articleSubtitle"
             type="text"
@@ -160,8 +189,11 @@ const DetailEditPage = ({ detailType }) => {
             onChange={changeArticleData}
             required
           />
-          <label htmlFor="bodyText">Text of the article</label>
+          <label className="detail-page__label" htmlFor="bodyText">
+            Text of the article
+          </label>
           <textarea
+            className="detail-page__text-area"
             id="bodyText"
             value={articleData.bodyText}
             onChange={changeArticleData}

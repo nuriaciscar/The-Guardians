@@ -53,7 +53,7 @@ a {
 
   &__top-container {
     display: flex;
-    border-bottom: 0.5px solid black;
+
     font-family: "Space Grotesk", sans-serif;
   }
 
@@ -64,9 +64,11 @@ a {
   }
 
   &-actions {
+    width: 420px;
+
     .header-user-area {
       display: flex;
-      align-items: space-around;
+      align-items: center;
       justify-content: space-around;
       padding-top: 15px;
       padding-bottom: 15px;
@@ -76,9 +78,14 @@ a {
         color: black;
         font-family: "Space Grotesk", sans-serif;
         font-weight: 500;
-
         width: 40px;
         white-space: nowrap;
+        margin-right: 10px;
+        margin-left: 30px;
+
+        &:hover {
+          color: #f66e44;
+        }
       }
 
       &__button {
@@ -91,12 +98,8 @@ a {
         border: none;
         padding: 5px;
         width: 75px;
-
-        &--sing-up {
-          margin-left: 15px;
-        }
-        &--login {
-          margin-left: 15px;
+        &:hover {
+          background-color: #f66e44;
         }
       }
     }
@@ -107,7 +110,9 @@ a {
         justify-content: space-around;
         list-style: none;
         width: 100%;
-        padding: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
         font-family: "Space Grotesk", sans-serif;
         li {
           display: flex;
@@ -124,6 +129,8 @@ a {
   &-runner {
     display: flex;
     justify-content: space-around;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
   }
 }
 
@@ -397,26 +404,13 @@ a {
   display: flex;
   flex-direction: column;
   width: 66%;
-  border: 1px black solid;
+
   justify-content: center;
   padding: 20px;
   &__top-image {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-}
-
-footer {
-  background-color: black;
-  color: white;
-  font-family: "Cardo", serif;
-  display: flex;
-  flex-direction: row;
-  font-family: "Cardo", serif;
-
-  &__title {
-    font-size: 30px;
   }
 }
 
@@ -430,6 +424,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+  img {
+    filter: none;
+  }
+
   .main__content {
     flex-direction: column;
     width: 100%;
@@ -463,6 +461,7 @@ footer {
       height: 400px;
       justify-content: center;
       align-items: center;
+      filter: none;
     }
   }
 
