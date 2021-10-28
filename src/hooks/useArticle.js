@@ -11,7 +11,6 @@ const useArticle = () => {
       const response = await fetch(url);
       let article = await response.json();
 
-      console.log("hook", article);
       dispatchArticle(loadArticleByIdAction(article));
     },
     [dispatchArticle]

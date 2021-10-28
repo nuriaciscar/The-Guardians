@@ -16,7 +16,6 @@ const articleReducer = (article, action) => {
         bodyText: articleData.fields.bodyText,
         id: articleData.id,
       };
-      console.log("reducer", newArticle);
       break;
 
     default:

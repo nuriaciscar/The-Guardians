@@ -16,14 +16,13 @@ import useArticle from "./hooks/useArticle";
 import { useEffect } from "react";
 
 function App() {
-  const { article, loadArticleById } = useArticle();
+  const { loadArticleById } = useArticle();
   useEffect(() => {
     loadArticleById(
       "culture/2020/dec/28/foie-gras-truffles-birds-drowned-in-brandy-lunch-queen-victoria-waddesdon-manor-kitchens"
     );
   }, [loadArticleById]);
 
-  console.log("app", article);
   return (
     <>
       <div className="container">
