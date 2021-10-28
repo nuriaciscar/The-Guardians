@@ -8,18 +8,33 @@ const MediumCard = ({ mediumCard: { image, icon, text } }) => {
       <img
         src={image}
         alt=""
-        className="main__big-image"
+        className="main__aside-image"
         width="100"
         height="100"
       />
       <h3 className="main__title">{text}</h3>
       <div className="main__more">
-        <NavLink to="/details" className="main__more__read">
-          Read More
+        <NavLink to="/details" className="main__more__read-medium">
+          READ MORE
         </NavLink>
         <div className="main__read-later">
-          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={() => setIconState(!iconState)} />
-          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={() => setIconState(!iconState)} />
+          <img
+            src="/images/bookmark_false.png"
+            alt="icono false"
+            className={iconState ? "notShow" : "show"}
+            width="17"
+            height="17"
+            onClick={() => setIconState(!iconState)}
+          />
+          <img
+            src="/images/bookmark_true.png"
+            alt="icono false"
+            className={iconState ? "show" : "notShow"}
+            width="17"
+            height="17"
+            onClick={() => setIconState(!iconState)}
+          />
+          <p>Add to Read Later</p>
         </div>
       </div>
     </div>
