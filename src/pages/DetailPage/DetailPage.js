@@ -1,3 +1,5 @@
+import { useParams } from "react-router";
+
 const DetailPage = ({
   sectionName,
   articleDate,
@@ -6,6 +8,8 @@ const DetailPage = ({
   articleSubtitle,
   bodyText,
 }) => {
+  const { id } = useParams();
+  console.log(id);
   return (
     <main className="main-article">
       <aside className="main-article__aside-left">
@@ -20,7 +24,6 @@ const DetailPage = ({
             <i></i>
             <p>Add to Read Letter</p>
           </div>
-
           <img
             src={imageSource}
             alt="thumbnail of the article. Api not descriptive enough, sorry"

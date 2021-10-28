@@ -38,11 +38,26 @@ const HomePage = () => {
   let image = "";
   let id = "";
   let title = "";
+  let sectionName = "";
+  let articleSubtitle = "";
+  let body = "";
+
   let titleCartText = "";
+  let dateText = "";
+  let imageText = "";
+  let sectionNameText = "";
+  let articleSubtitleText = "";
+  let bodyText = "";
   let idText = "";
+
   let idMedium = "";
   let titleCartMedium = "";
   let imageCartMedium = "";
+  let dateCartMedium = "";
+  let sectionNameMedium = "";
+  let articleSubtitleMedium = "";
+  let bodyMedium = ""
+
 
   //new1?.fields
   const reloadSport = (event) => {
@@ -70,28 +85,58 @@ const HomePage = () => {
   if (news.response !== undefined) {
     const newsList = news.response.results;
     const dateClean = newsList[0].webPublicationDate.split("T");
+    const dateCleanText = newsList[1].webPublicationDate.split("T");
+    const dateCleanMedium = newsList[2].webPublicationDate.split("T");
     date = dateClean[0];
     image = newsList[0].fields.thumbnail;
     title = newsList[0].webTitle;
-    id = dateClean[0].id;
+    articleSubtitle = newsList[0].fields.trailText;
+    sectionName = newsList[0].sectionName;
+    body = newsList[0].fields.bodyText;
+    id = newsList[0].id;
+
     titleCartText = newsList[1].webTitle;
     idText = newsList[1].id;
+    dateText = dateCleanText[0];
+    imageText = newsList[1].fields.thumbnail;
+    sectionNameText = newsList[1].sectionName;
+    articleSubtitleText = newsList[1].fields.trailText;
+    bodyText = newsList[1].fields.bodyText;
+
     titleCartMedium = newsList[2].webTitle;
     imageCartMedium = newsList[2].fields.thumbnail;
     idMedium = newsList[2].id;
+    dateCartMedium = dateCleanMedium[0];
+    sectionNameMedium = newsList[2].sectionName;
+    articleSubtitleMedium = newsList[2].fields.trailText;
+    bodyMedium = newsList[2].fields.bodyText;
   }
+
   return (
     <>
       {newsSport.length !== 0 && news.response !== undefined && (
         <main className="main">
           <section className="main__news">
-            <MainCard mainCard={{ date, image, title }} key={id} />
+            <MainCard mainCard={{ date, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
             <div className="main__aside">
-              <CardText cardText={{ text: titleCartText }} key={idText} />
+              <CardText cardText={{
+                date: dateText,
+                image: imageText,
+                text: titleCartText,
+                sectionName: sectionNameText,
+                articleSubtitle: articleSubtitleText,
+                body: bodyText,
+                placeHolder: "homepage"
+              }} key={idText} />
               <MediumCard
                 mediumCard={{
+                  date: dateCartMedium,
                   image: imageCartMedium,
                   text: titleCartMedium,
+                  sectionName: sectionNameMedium,
+                  articleSubtitle: articleSubtitleMedium,
+                  body: bodyMedium,
+                  placeHolder: "homepage"
                 }}
                 key={idMedium}
               />
@@ -109,6 +154,11 @@ const HomePage = () => {
                   card={{
                     text: newCardSport.webTitle,
                     image: newCardSport.fields.thumbnail,
+                    date: newCardSport.webPublicationDate.split("T")[0],
+                    sectionName: newCardSport.sectionName,
+                    articleSubtitle: newCardSport.fields.trailText,
+                    body: newCardSport.fields.bodyText,
+                    placeHolder: "homepage"
                   }}
                   key={newCardSport.id}
                 />
@@ -128,6 +178,11 @@ const HomePage = () => {
                   card={{
                     text: newCardScience.webTitle,
                     image: newCardScience.fields.thumbnail,
+                    date: newCardScience.webPublicationDate.split("T")[0],
+                    sectionName: newCardScience.sectionName,
+                    articleSubtitle: newCardScience.fields.trailText,
+                    body: newCardScience.fields.bodyText,
+                    placeHolder: "homepage",
                   }}
                   key={newCardScience.id}
                 />
@@ -147,6 +202,11 @@ const HomePage = () => {
                   card={{
                     text: newCardLifeStyle.webTitle,
                     image: newCardLifeStyle.fields.thumbnail,
+                    date: newCardLifeStyle.webPublicationDate.split("T")[0],
+                    sectionName: newCardLifeStyle.sectionName,
+                    articleSubtitle: newCardLifeStyle.fields.trailText,
+                    body: newCardLifeStyle.fields.bodyText,
+                    placeHolder: "homepage",
                   }}
                   key={newCardLifeStyle.id}
                 />

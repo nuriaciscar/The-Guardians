@@ -26,7 +26,7 @@ function App() {
             <Route path="/mynews" exact>
               <MyNewsPage />
             </Route>
-            <Route path="/details" exact>
+            <Route path="/details/:id" exact>
               <DetailPage />
             </Route>
             <Route path="/detailsmodify" exact>

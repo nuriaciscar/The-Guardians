@@ -12,9 +12,7 @@ const useLocalApi = () => {
 
   const getLocalApi = useCallback(async () => {
     const response = await fetch("https://api-guardians.herokuapp.com/news");
-
     let localApi = await response.json();
-
     dispatchLocalApi(getLocalApiAction(localApi));
   }, [dispatchLocalApi]);
 
@@ -35,11 +33,12 @@ const useLocalApi = () => {
 
   const deleteLocalApi = useCallback(
     async (id) => {
-      const response = await fetch("https://api-guardians.herokuapp.com/news");
-
-      let deletedData = await response.json();
-
-      dispatchLocalApi(deleteLocalApiAction(deletedData));
+      await fetch(`https://api-guardians.herokuapp.com/news/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
+      dispatchLocalApi(deleteLocalApiAction(id));
     },
     [dispatchLocalApi]
   );

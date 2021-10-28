@@ -5,7 +5,7 @@ const localApiReducer = (localNews, action) => {
 
   switch (action.type) {
     case actionTypes.getLocalApi:
-      newLocalNews = action.article.response;
+      newLocalNews = action.getData;
       break;
 
     case actionTypes.putLocalApi:
@@ -13,16 +13,18 @@ const localApiReducer = (localNews, action) => {
       break;
 
     case actionTypes.deleteLocalApi:
-      newLocalNews = action.newsList;
+      newLocalNews = localNews.filter((news) => news.id !== action.id);
+
       break;
 
     case actionTypes.postLocalApi:
-      newLocalNews = action.newsList;
+      newLocalNews = [action.postData];
       break;
 
     default:
       newLocalNews = localNews;
   }
+  //console.log(newLocalNews)
 
   return newLocalNews;
 };
