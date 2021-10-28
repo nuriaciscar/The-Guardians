@@ -10,7 +10,7 @@ const NotFoundPage = () => {
           width="400"
           height="400"
         ></img>
-        <p>Page not found</p>
+        <p>Lo sentimos Mario</p>
       </div>
     </main>
   );

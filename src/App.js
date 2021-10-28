@@ -49,7 +49,7 @@ function App() {
               <Redirect to="/home" />
             </Route>
             <Route path="*" exact>
-              <Redirect to="NotFoundPage" />
+              <Redirect to="/NotFoundPage" />
             </Route>
           </Switch>
           <Footer />
