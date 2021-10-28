@@ -101,7 +101,7 @@ const DetailEditPage = ({ detailType }) => {
           <div className="article__top-image__detail">
             <p>{articleData.articleDate}</p>
 
-            <p>Add to Read Later</p>
+
           </div>
 
           <img
