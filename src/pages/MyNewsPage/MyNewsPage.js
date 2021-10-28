@@ -10,7 +10,6 @@ const MyNewsPage = () => {
     getLocalApi();
   }, [getLocalApi]);
   if (localApi.length !== 0) {
-    //console.log(localApi);
   }
   return (
     <>
