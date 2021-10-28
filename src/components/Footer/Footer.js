@@ -22,8 +22,9 @@ const Footer = () => {
 
         <div className="footer__info">
           <p className="footer__text">
-            Aquí podriem dir que pillem una API del diari Guardian i tal
+            This webpage is using the api of The Guardian Newspaper.
           </p>
+          <p className="footer__text">Hope you like it!</p>
         </div>
       </div>
       <div className="footer__copyright">
