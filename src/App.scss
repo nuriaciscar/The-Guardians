@@ -4,9 +4,10 @@
 
 body {
   width: 100vw;
-  background-image: url("./images/fons2.jpeg");
+  background-image: url("./images/news.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top;
 }
 
 .goUp {
@@ -47,11 +48,11 @@ a {
 .header {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 
   &__top-container {
     display: flex;
-    border: 1px solid black;
+
     font-family: "Space Grotesk", sans-serif;
   }
 
