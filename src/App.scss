@@ -147,10 +147,6 @@ a {
   }
 }
 
-.main__content {
-  display: flex;
-  flex-direction: row;
-}
 .main__news {
   display: flex;
   padding-left: 50px;
@@ -174,8 +170,7 @@ a {
   flex-direction: column;
 
   &-image {
-    width: 500px;
-    height: 500px;
+    width: 453px;
     justify-content: center;
     align-items: center;
   }
@@ -273,8 +268,8 @@ a {
   display: flex;
   flex-direction: row;
   font-family: "Cardo", italic;
-  font-weight: 300;
-  font-size: 26px;
+  font-weight: bold;
+  font-size: 35px;
   font-style: italic;
   width: 100%;
 
@@ -435,6 +430,8 @@ a {
   }
 
   .main__content {
+    flex-direction: column;
+    width: 100%;
     flex-direction: column;
     width: 100%;
   }

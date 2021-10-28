@@ -110,6 +110,7 @@ const DetailEditPage = ({ detailType }) => {
           />
           <h3 className="main__title">{articleData.articleTitle}</h3>
           <p className="main__subtitle">{articleData.articleSubtitle}</p>
+          <p className="body-text"></p>
           {articleData.bodyText}
         </div>
       </article>
