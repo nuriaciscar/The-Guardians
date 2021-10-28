@@ -4,6 +4,9 @@
 
 body {
   width: 100vw;
+  background-image: url("../../public/images/fons.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .goUp {
@@ -30,6 +33,9 @@ body {
   background-color: rgb(234, 234, 234);
 }
 
+#root {
+  margin: 0 auto;
+}
 a {
   text-decoration: none;
   color: black;
