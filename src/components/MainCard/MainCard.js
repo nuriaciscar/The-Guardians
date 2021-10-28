@@ -45,19 +45,22 @@ const MainCard = ({
   return (
     <div className="main__big">
       <p>{date}</p>
-      <img
-        src={image}
-        alt=""
-        className="main__big-image"
-        width="500"
-        height="500"
-      />
+      <NavLink to={`/detail/?id=${id}`}>
+        <img
+          src={image}
+          alt=""
+          className="main__big-image"
+          width="500"
+          height="500"
+        />
+      </NavLink>
       <h3 className="main__title">{title}</h3>
       <div className="main__more">
         <NavLink to={`/detail/?id=${id}`} className="main__more__read">
           READ MORE
         </NavLink>
         <div className="main__read-later">
+
           <img
             src="/images/bookmark_false.png"
             alt="icono false"
@@ -71,24 +74,9 @@ const MainCard = ({
             alt="icono false"
             className={iconState ? "show" : "notShow"}
             width="17"
-            height="17" /*onClick={ }*/
+            height="17"
           />
           <p>Add to Read Later</p>
-          <img
-            src="/images/bookmark_false.png"
-            alt="icono false"
-            className={iconState ? "notShow" : "show"}
-            width="17"
-            height="17"
-            onClick={postNewOnClick}
-          />
-          <img
-            src="/images/bookmark_true.png"
-            alt="icono false"
-            className={iconState ? "show" : "notShow"}
-            width="17"
-            height="17"
-          />
         </div>
       </div>
     </div>
