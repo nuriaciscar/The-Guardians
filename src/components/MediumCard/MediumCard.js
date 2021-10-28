@@ -42,9 +42,23 @@ const MediumCard = ({ mediumCard: { date, image, text, sectionName, articleSubti
           READ MORE
         </NavLink>
         <div className="main__read-later">
-          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
-          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={postNewOnClick} />
-
+          <img
+            src="/images/bookmark_false.png"
+            alt="icono false"
+            className={iconState ? "notShow" : "show"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <img
+            src="/images/bookmark_true.png"
+            alt="icono false"
+            className={iconState ? "show" : "notShow"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <p>Add to Read Later</p>
         </div>
       </div>
     </div>

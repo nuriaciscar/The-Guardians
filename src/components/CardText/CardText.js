@@ -2,7 +2,18 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useLocalApi from "../../hooks/useLocalApi";
 
-const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle, body, id, placeHolder } }) => {
+const CardText = ({
+  cardText: {
+    date,
+    image,
+    text,
+    sectionName,
+    articleSubtitle,
+    body,
+    id,
+    placeHolder,
+  },
+}) => {
   const [iconState, setIconState] = useState(false);
   const { postLocalApi } = useLocalApi();
   const { getLocalApi, localApi } = useLocalApi();
@@ -16,16 +27,18 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
     articleTitle: text,
     articleSubtitle: articleSubtitle,
     bodyText: body,
-    id: id
+    id: id,
   };
 
   const postNewOnClick = () => {
     setIconState(!iconState);
-    const repeatedNew = localApi.some((element) => element.id === initialArticleData.id);
+    const repeatedNew = localApi.some(
+      (element) => element.id === initialArticleData.id
+    );
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }
-  }
+  };
 
   return (
     <div className="main__aside-top">
@@ -35,9 +48,23 @@ const CardText = ({ cardText: { date, image, text, sectionName, articleSubtitle,
           Read More
         </NavLink>
         <div className="main__read-later">
-          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
-          <img src="/images/bookmark_true.png" alt="icono false" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={postNewOnClick} />
-
+          <img
+            src="/images/bookmark_false.png"
+            alt="icono false"
+            className={iconState ? "notShow" : "show"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <img
+            src="/images/bookmark_true.png"
+            alt="icono false"
+            className={iconState ? "show" : "notShow"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <p>Add to Read Later</p>
         </div>
       </div>
     </div>

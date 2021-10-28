@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Card from "../../components/Card/Card";
 import useLocalApi from "../../hooks/useLocalApi";
-
+import MyNewsPage from "./MyNewsPage.scss";
 
 const MyNewsPage = () => {
   const { getLocalApi, localApi } = useLocalApi();
@@ -13,7 +13,7 @@ const MyNewsPage = () => {
   }
   return (
     <>
-      {localApi.length !== 0 &&
+      {localApi.length !== 0 && (
         <main className="main-title">
           <aside className="main-title__aside-left">
             <div className="main-title__aside-name">
@@ -38,7 +38,8 @@ const MyNewsPage = () => {
               />
             ))}
           </section>
-        </main>}
+        </main>
+      )}
     </>
   );
 };
