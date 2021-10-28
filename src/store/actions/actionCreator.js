@@ -45,3 +45,8 @@ export const loadArticleByIdAction = (id) => ({
   type: actionTypes.loadArticleById,
   id,
 });
+
+export const getApiArticleByIdAction = (id) => ({
+  type: actionTypes.getApiArticleById,
+  id,
+});
