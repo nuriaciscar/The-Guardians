@@ -1,152 +1,44 @@
+import { useEffect } from "react";
+import Card from "../../components/Card/Card";
+import useLocalApi from "../../hooks/useLocalApi";
+
+
 const MyNewsPage = () => {
+  const { getLocalApi, localApi } = useLocalApi();
+  useEffect(() => {
+    getLocalApi();
+  }, [getLocalApi]);
+  if (localApi.length !== 0) {
+    //console.log(localApi);
+  }
   return (
     <>
-      <main className="main-title">
-        <aside className="main-title__aside-left">
-          <div className="main-title__aside-name">
-            <h2 className="main-title__aside-title">SPORT</h2>
-          </div>
-        </aside>
+      {localApi.length !== 0 &&
+        <main className="main-title">
+          <aside className="main-title__aside-left">
+            <div className="main-title__aside-name">
+              <h2 className="main-title__aside-title">MY NEWS</h2>
+            </div>
+          </aside>
 
-        <section className="section-title">
-          <div className="section-title__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
+          <section className="section-title">
+            {localApi.map((newNewLocal) => (
+              <Card
+                card={{
+                  text: newNewLocal.articleTitle,
+                  image: newNewLocal.imageSource,
+                  date: newNewLocal.articleDate,
+                  sectionName: newNewLocal.sectionName,
+                  articleSubtitle: newNewLocal.articleSubtitle,
+                  body: newNewLocal.bodyText,
+                  placeHolder: "mynews",
+                  id: newNewLocal.id,
+                }}
+                key={newNewLocal.id}
               />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="section-title__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="section-title__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="section-title__cards">
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-            <div className="section__card">
-              <img
-                src="./pexels-kaique-rocha-1812602.jpg"
-                alt=""
-                className="main__big-image"
-                width="200"
-                height="200"
-              />
-              <p className="section__text">Text adfskjladfsjkjadfskjladfsl</p>
-              <div className="main__more">
-                <a href="h">READ MORE</a>
-                <div className="main__read-later">
-                  <i>a</i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+            ))}
+          </section>
+        </main>}
     </>
   );
 };
