@@ -14,7 +14,7 @@ const localArticleReducer = (article, action) => {
           return string;
         }, "")
         .split("&&&")
-        .map((paragraph) => <p>{paragraph}</p>);
+        .map((paragraph) => <p key={paragraph.slice(0, 20)}>{paragraph}</p>);
 
       newArticle = {
         sectionName: articleData.sectionName,

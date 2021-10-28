@@ -21,10 +21,8 @@ const DetailEditPage = ({ detailType }) => {
   }
 
   useEffect(() => {
-    console.log(id);
     if (id !== null) getLocalApiArticle(id);
   }, [getLocalApiArticle, id]);
-  console.log("detail", apiArticle);
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
@@ -32,18 +30,6 @@ const DetailEditPage = ({ detailType }) => {
     detailType === "createNews" ? false : true
   );
 
-  /*   if (detailType === "myListNews") {
-    initialArticleData = {
-      sectionName: "SECTION",
-      imageSource:
-        "https://www.muycomputer.com/wp-content/uploads/2020/12/google.png",
-      articleDate: "19-4-202",
-      articleTitle: "HOLIIIIIIII",
-      articleSubtitle: "Holi holi holi",
-      bodyText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem, vitae eum dicta laudantium amet. Itaque facere, aut reprehenderit accusantium delectus nostrum maxime, enim repellendus, labore harum reiciendis quidem non.",
-    };
-  } */
   let initialArticleData = {
     sectionName: "SECTION",
     imageSource: "",
@@ -53,26 +39,18 @@ const DetailEditPage = ({ detailType }) => {
     bodyText: "",
     id: "", /////////////////////////////posar al submit
   };
-  /*   const getArticleData = useRef(
-    (detailType) => {
-      if (detailType === "myListNews") return apiArticle
-      else return {
-        sectionName: "SECTION",
-        imageSource: "",
-        articleDate: "",
-        articleTitle: "",
-        articleSubtitle: "",
-        bodyText: "",
-        id: "", /////////////////////////////posar al submit
-      };
-    },
-    [apiArticle]
-  ); */
-
-  initialArticleData =
-    detailType === "myListNews" ? apiArticle : initialArticleData;
 
   const [articleData, setArticleData] = useState(initialArticleData);
+
+  const waitInitialData = async (detailType) => {
+    initialArticleData = await (detailType === "myListNews"
+      ? apiArticle
+      : initialArticleData);
+    setArticleData(initialArticleData);
+    return initialArticleData;
+  };
+
+  waitInitialData(detailType);
 
   function changeArticleData(event) {
     setArticleData({
@@ -133,7 +111,7 @@ const DetailEditPage = ({ detailType }) => {
           />
           <h3 className="main__title">{articleData.articleTitle}</h3>
           <p className="main__subtitle">{articleData.articleSubtitle}</p>
-          <p>{articleData.bodyText}</p>
+          {articleData.bodyText}
         </div>
       </article>
     );
@@ -242,7 +220,6 @@ const DetailEditPage = ({ detailType }) => {
 
   return (
     <>
-      <pre>{JSON.stringify(articleData, null, 2)}</pre>
       {detailType === "myListNews" && renderMyListNews()}
       {detailType === "createNews" && renderCreateNews()}
     </>
