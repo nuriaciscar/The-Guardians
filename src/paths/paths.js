@@ -1,7 +1,7 @@
 const paths = {
   home: "/",
   myNews: "/mynews",
-  detail: "/detail",
+  detail: "/detail/?",
   detailEditPost: "/detailEditPost",
   detailEditPut: "/detailEditPut",
   detailData: "/",

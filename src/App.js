@@ -14,16 +14,6 @@ import DetailPage from "./pages/DetailPage/DetailPage";
 import DetailEditPage from "./pages/DetailEditPage/DetailEditPage";
 
 function App() {
-<<<<<<< HEAD
-=======
-  const { loadArticleById } = useArticle();
-  useEffect(() => {
-    loadArticleById(
-      "culture/2020/dec/28/foie-gras-truffles-birds-drowned-in-brandy-lunch-queen-victoria-waddesdon-manor-kitchens"
-    );
-  }, [loadArticleById]);
-
->>>>>>> a47fb562eaa7450de59379e844133a56f30c5a1e
   return (
     <>
       <div className="container">
