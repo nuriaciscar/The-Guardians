@@ -22,8 +22,6 @@ function App() {
       "culture/2020/dec/28/foie-gras-truffles-birds-drowned-in-brandy-lunch-queen-victoria-waddesdon-manor-kitchens"
     );
   }, [loadArticleById]);
-
-  console.log("app", article);
   return (
     <>
       <div className="container">
