@@ -46,6 +46,7 @@ const DetailEditPage = ({ detailType }) => {
     initialArticleData = await (detailType === "myListNews"
       ? apiArticle
       : initialArticleData);
+    initialArticleData = { ...initialArticleData };
     setArticleData(initialArticleData);
     return initialArticleData;
   };
@@ -100,8 +101,6 @@ const DetailEditPage = ({ detailType }) => {
         <div className="article__content">
           <div className="article__top-image__detail">
             <p>{articleData.articleDate}</p>
-
-
           </div>
 
           <img
