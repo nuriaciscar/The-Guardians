@@ -43,12 +43,13 @@ const DetailEditPage = ({ detailType }) => {
   const [articleData, setArticleData] = useState(initialArticleData);
 
   const waitInitialData = async (detailType) => {
-    initialArticleData = await (detailType === "myListNews"
-      ? apiArticle
-      : initialArticleData);
-    initialArticleData = { ...initialArticleData };
-    setArticleData(initialArticleData);
-    return initialArticleData;
+    if (detailType === "myListNews") {
+      initialArticleData = await apiArticle;
+
+      console.log(initialArticleData);
+      setArticleData(initialArticleData);
+    }
+    //return initialArticleData;
   };
 
   waitInitialData(detailType);
