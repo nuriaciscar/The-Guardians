@@ -86,7 +86,12 @@ const HomePage = () => {
       {newsSport.length !== 0 && news.response !== undefined && (
         <main className="main">
           <a className="goUp hide" href="#header" id="js-top">
-            <img src="./images/up.png" height="30" width="30"></img>
+            <img
+              src="./images/up.png"
+              alt="icon of an arrow"
+              height="30"
+              width="30"
+            ></img>
           </a>
 
           <section className="main__content" id="news">

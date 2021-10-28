@@ -4,7 +4,6 @@ import useLocalApi from "../../hooks/useLocalApi";
 
 const DetailEditPage = ({ detailType }) => {
   const { postLocalApi, putLocalApi } = useLocalApi();
-  const [iconState, setIconState] = useState(false);
 
   //const params = useParams();
 
@@ -95,22 +94,7 @@ const DetailEditPage = ({ detailType }) => {
         <div className="article__content">
           <div className="article__top-image__detail">
             <p>{articleData.articleDate}</p>
-            <img
-              src="/images/bookmark_false.png"
-              alt="icono false"
-              className={iconState ? "notShow" : "show"}
-              width="17"
-              height="17"
-              onClick={() => setIconState(!iconState)}
-            />
-            <img
-              src="/images/bookmark_true.png"
-              alt="icono false"
-              className={iconState ? "show" : "notShow"}
-              width="17"
-              height="17"
-              onClick={() => setIconState(!iconState)}
-            />
+
             <p>Add to Read Later</p>
           </div>
 
