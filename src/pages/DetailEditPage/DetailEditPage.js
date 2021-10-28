@@ -46,7 +46,6 @@ const DetailEditPage = ({ detailType }) => {
     if (detailType === "myListNews") {
       initialArticleData = await apiArticle;
 
-      console.log(initialArticleData);
       setArticleData(initialArticleData);
     }
     //return initialArticleData;
