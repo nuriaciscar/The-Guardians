@@ -11,8 +11,8 @@ function Header() {
             src={sourceLogo}
             className="header-logo__image"
             alt="logo of the guardian"
-            height="80"
-            width="200"
+            height="100"
+            width="290"
           />
         </NavLink>
         <div className="header-actions">
