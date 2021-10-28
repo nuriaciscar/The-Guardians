@@ -14,7 +14,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     loadArticleById(id);
-  }, [loadArticleById]);
+  }, [loadArticleById, id]);
 
   return (
     <>

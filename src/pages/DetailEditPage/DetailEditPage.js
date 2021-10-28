@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./DetailEditPage.scss";
 import useLocalApi from "../../hooks/useLocalApi";
+import { useLocation } from "react-router";
 
 const DetailEditPage = ({ detailType }) => {
-  const { postLocalApi, putLocalApi } = useLocalApi();
-  //const params = useParams();
+  const { postLocalApi, putLocalApi, apiArticle, getLocalApiArticle } =
+    useLocalApi();
+
+  let query = useLocation().search;
+  let id;
+
+  if (query) {
+    query = query
+      .slice(1, query.length)
+      .split("&")
+      .map((param) => param.split("="));
+    id = query.filter((array) => array[0] === "id")[0][1];
+  } else {
+    id = null;
+  }
+
+  useEffect(() => {
+    console.log(id);
+    if (id !== null) getLocalApiArticle(id);
+  }, [getLocalApiArticle, id]);
+  console.log("detail", apiArticle);
 
   const [isFormShown, setIsFormShown] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
@@ -12,25 +32,7 @@ const DetailEditPage = ({ detailType }) => {
     detailType === "createNews" ? false : true
   );
 
-  let initialArticleData = {
-    sectionName: "SECTION",
-    imageSource: "",
-    articleDate: "",
-    articleTitle: "",
-    articleSubtitle: "",
-    bodyText: "",
-  };
   /*   if (detailType === "myListNews") {
-    initialArticleData = {
-      sectionName: params[0],
-      imageSource: params[1],
-      articleDate: params[2],
-      articleTitle: params[3],
-      articleSubtitle: params[4],
-      bodyText: params[5],
-    };
-  } */
-  if (detailType === "myListNews") {
     initialArticleData = {
       sectionName: "SECTION",
       imageSource:
@@ -41,7 +43,34 @@ const DetailEditPage = ({ detailType }) => {
       bodyText:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem, vitae eum dicta laudantium amet. Itaque facere, aut reprehenderit accusantium delectus nostrum maxime, enim repellendus, labore harum reiciendis quidem non.",
     };
-  }
+  } */
+  let initialArticleData = {
+    sectionName: "SECTION",
+    imageSource: "",
+    articleDate: "",
+    articleTitle: "",
+    articleSubtitle: "",
+    bodyText: "",
+    id: "", /////////////////////////////posar al submit
+  };
+  /*   const getArticleData = useRef(
+    (detailType) => {
+      if (detailType === "myListNews") return apiArticle
+      else return {
+        sectionName: "SECTION",
+        imageSource: "",
+        articleDate: "",
+        articleTitle: "",
+        articleSubtitle: "",
+        bodyText: "",
+        id: "", /////////////////////////////posar al submit
+      };
+    },
+    [apiArticle]
+  ); */
+
+  initialArticleData =
+    detailType === "myListNews" ? apiArticle : initialArticleData;
 
   const [articleData, setArticleData] = useState(initialArticleData);
 
@@ -213,6 +242,7 @@ const DetailEditPage = ({ detailType }) => {
 
   return (
     <>
+      <pre>{JSON.stringify(articleData, null, 2)}</pre>
       {detailType === "myListNews" && renderMyListNews()}
       {detailType === "createNews" && renderCreateNews()}
     </>
