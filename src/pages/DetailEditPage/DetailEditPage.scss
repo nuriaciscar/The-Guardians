@@ -1,3 +1,104 @@
 textarea {
   resize: none;
 }
+
+.button--edit {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.button--submit {
+  font-family: "Space Grotesk", sans-serif;
+
+  margin-top: 20px;
+}
+
+.main-article__aside-name {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 0.5 solid black;
+}
+.aside__title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  padding: 0;
+}
+
+.main-article__aside-left {
+  border: none;
+}
+
+article {
+  border-left: 0.5px solid black;
+  padding-left: 70px;
+}
+
+.main__title__detail {
+  font-family: "Cardo", serif;
+  font-weight: 300;
+  font-size: 35px;
+  font-style: normal;
+  line-height: auto;
+}
+
+.main__subtitle__detail {
+  font-family: "Cardo", italic;
+  font-weight: 300;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.main__text__detail {
+  font-family: "Cardo", italic;
+  font-weight: 300;
+  font-size: 19px;
+  padding-right: 20px;
+}
+
+.article__top-image__detail {
+  font-family: "Space Grotesk", sans-serif;
+  white-space: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  width: 500px;
+  & :last-of-type {
+    text-decoration: underline;
+  }
+}
+
+.detail-page-form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    & input {
+      padding: 10px;
+      background-color: rgb(248, 248, 248);
+      border: none;
+      // border-radius: 20px;
+    }
+  }
+}
+.detail-page__label {
+  padding-top: 12px;
+  padding-bottom: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.detail-page__text-area {
+  background-color: transparent;
+  background-color: rgb(248, 248, 248);
+  border: none;
+  height: 80px;
+}
