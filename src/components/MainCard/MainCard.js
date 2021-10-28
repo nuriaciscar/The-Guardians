@@ -11,6 +11,7 @@ const MainCard = ({
     articleSubtitle,
     body,
     placeHolder,
+    id,
   },
 }) => {
   const [iconState, setIconState] = useState(false);
@@ -22,7 +23,6 @@ const MainCard = ({
     articleSubtitle: articleSubtitle,
     bodyText: body,
   };
-
   const { postLocalApi } = useLocalApi();
 
   const { getLocalApi, localApi } = useLocalApi();
@@ -36,13 +36,12 @@ const MainCard = ({
     }
 
     const repeatedNew = localApi.some(
-      (element) => element.id === initialArticleData.id
+      (element) => element.articleTitle === initialArticleData.articleTitle
     );
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }
   };
-
   return (
     <div className="main__big">
       <p>{date}</p>
@@ -55,7 +54,7 @@ const MainCard = ({
       />
       <h3 className="main__title">{title}</h3>
       <div className="main__more">
-        <NavLink to="/details" className="main__more__read">
+        <NavLink to={`/detail/?id=${id}`} className="main__more__read">
           READ MORE
         </NavLink>
         <div className="main__read-later">
@@ -75,6 +74,21 @@ const MainCard = ({
             height="17" /*onClick={ }*/
           />
           <p>Add to Read Later</p>
+          <img
+            src="/images/bookmark_false.png"
+            alt="icono false"
+            className={iconState ? "notShow" : "show"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <img
+            src="/images/bookmark_true.png"
+            alt="icono false"
+            className={iconState ? "show" : "notShow"}
+            width="17"
+            height="17"
+          />
         </div>
       </div>
     </div>

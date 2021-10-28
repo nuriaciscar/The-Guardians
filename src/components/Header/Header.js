@@ -28,30 +28,21 @@ function Header() {
             <button className="header-user-area__button header-user-area__button--login">
               Login
             </button>
-
-            <button className="header-user-area__button header-user-area__button--login">
-              Login
-            </button>
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
-              <a href="#news" className="header-nav__list-element">
+              <a href="/home#news" className="header-nav__list-element">
                 NEWS
               </a>
-              <a href="#sports" className="header-nav__list-element">
+              <a href="/home#sports" className="header-nav__list-element">
                 SPORTS
               </a>
-              <a href="#science" className="header-nav__list-element">
+              <a href="/home#science" className="header-nav__list-element">
                 SCIENCE
               </a>
-              <a href="#lifestyle" className="header-nav__list-element">
+              <a href="/home#lifestyle" className="header-nav__list-element">
                 LIFESTYLE
               </a>
-
-              {/* <li className="header-nav__list-element">SPORT</li>
-              <li className="header-nav__list-element">LIFESTYLE</li>
-              <li className="header-nav__list-element">CULTURE</li>
-              <li className="header-nav__list-element">OPINION</li> */}
             </ul>
           </div>
         </div>

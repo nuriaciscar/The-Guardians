@@ -128,7 +128,7 @@ const HomePage = () => {
 
           <section className="main__content" id="news">
             <div className="main__news">
-              <MainCard mainCard={{ date, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
+              <MainCard mainCard={{ date, id, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
             </div>
             <div className="main__aside">
               <CardText cardText={{
@@ -138,7 +138,8 @@ const HomePage = () => {
                 sectionName: sectionNameText,
                 articleSubtitle: articleSubtitleText,
                 body: bodyText,
-                placeHolder: "homepage"
+                placeHolder: "homepage",
+                id: idText
               }} key={idText} />
               <MediumCard
                 mediumCard={{
@@ -148,7 +149,9 @@ const HomePage = () => {
                   sectionName: sectionNameMedium,
                   articleSubtitle: articleSubtitleMedium,
                   body: bodyMedium,
-                  placeHolder: "homepage"
+                  placeHolder: "homepage",
+                  id: idMedium
+
                 }}
                 key={idMedium}
               />
@@ -160,7 +163,7 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadSport}>-</button>
+              <button onClick={reloadSport} className={numberSport === 1 ? "notShow" : "show"}>-</button>
               {newsSport.map((newCardSport) => (
                 <Card
                   card={{
@@ -170,7 +173,8 @@ const HomePage = () => {
                     sectionName: newCardSport.sectionName,
                     articleSubtitle: newCardSport.fields.trailText,
                     body: newCardSport.fields.bodyText,
-                    placeHolder: "homepage"
+                    placeHolder: "homepage",
+                    idHomepage: newCardSport.id
                   }}
                   key={newCardSport.id}
                 />
@@ -184,7 +188,7 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadScience}>-</button>
+              <button onClick={reloadScience} className={numberScience === 1 ? "notShow" : "show"}>-</button>
               {newsScience.map((newCardScience) => (
                 <Card
                   card={{
@@ -195,6 +199,7 @@ const HomePage = () => {
                     articleSubtitle: newCardScience.fields.trailText,
                     body: newCardScience.fields.bodyText,
                     placeHolder: "homepage",
+                    idHomepage: newCardScience.id
                   }}
                   key={newCardScience.id}
                 />
@@ -208,7 +213,7 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadLifeStyle}>-</button>
+              <button onClick={reloadLifeStyle} className={numberLifeStyle === 1 ? "notShow" : "show"}>-</button>
               {newsLifeStyle.map((newCardLifeStyle, i) => (
                 <Card
                   card={{
@@ -219,6 +224,7 @@ const HomePage = () => {
                     articleSubtitle: newCardLifeStyle.fields.trailText,
                     body: newCardLifeStyle.fields.bodyText,
                     placeHolder: "homepage",
+                    idHomepage: newCardLifeStyle.id
                   }}
                   key={newCardLifeStyle.id}
                 />
