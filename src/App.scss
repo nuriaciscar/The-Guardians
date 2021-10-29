@@ -268,8 +268,8 @@ a {
   display: flex;
   flex-direction: row;
   font-family: "Cardo", italic;
-  font-weight: bold;
-  font-size: 35px;
+  font-weight: 300;
+  font-size: 30px;
   font-style: italic;
   width: 100%;
 
@@ -432,8 +432,6 @@ a {
   .main__content {
     flex-direction: column;
     width: 100%;
-    flex-direction: column;
-    width: 100%;
   }
 
   .main__news {
@@ -523,4 +521,13 @@ a {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.main__content--home {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  font-size: 26px !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
 }
