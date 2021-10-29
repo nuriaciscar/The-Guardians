@@ -56,8 +56,7 @@ const HomePage = () => {
   let dateCartMedium = "";
   let sectionNameMedium = "";
   let articleSubtitleMedium = "";
-  let bodyMedium = ""
-
+  let bodyMedium = "";
 
   //new1?.fields
   const reloadSport = (event) => {
@@ -116,7 +115,6 @@ const HomePage = () => {
     <>
       {newsSport.length !== 0 && news.response !== undefined && (
         <main className="main">
-
           <a className="goUp hide" href="#header" id="js-top">
             <img
               src="./images/up.png"
@@ -126,21 +124,36 @@ const HomePage = () => {
             ></img>
           </a>
 
-          <section className="main__content" id="news">
+          <section className="main__content main__content--home" id="news">
             <div className="main__news">
-              <MainCard mainCard={{ date, id, image, title, sectionName, articleSubtitle, body, placeHolder: "homepage" }} key={id} />
+              <MainCard
+                mainCard={{
+                  date,
+                  id,
+                  image,
+                  title,
+                  sectionName,
+                  articleSubtitle,
+                  body,
+                  placeHolder: "homepage",
+                }}
+                key={id}
+              />
             </div>
             <div className="main__aside">
-              <CardText cardText={{
-                date: dateText,
-                image: imageText,
-                text: titleCartText,
-                sectionName: sectionNameText,
-                articleSubtitle: articleSubtitleText,
-                body: bodyText,
-                placeHolder: "homepage",
-                id: idText
-              }} key={idText} />
+              <CardText
+                cardText={{
+                  date: dateText,
+                  image: imageText,
+                  text: titleCartText,
+                  sectionName: sectionNameText,
+                  articleSubtitle: articleSubtitleText,
+                  body: bodyText,
+                  placeHolder: "homepage",
+                  id: idText,
+                }}
+                key={idText}
+              />
               <MediumCard
                 mediumCard={{
                   date: dateCartMedium,
@@ -150,8 +163,7 @@ const HomePage = () => {
                   articleSubtitle: articleSubtitleMedium,
                   body: bodyMedium,
                   placeHolder: "homepage",
-                  id: idMedium
-
+                  id: idMedium,
                 }}
                 key={idMedium}
               />
@@ -163,7 +175,12 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadSport} className={numberSport === 1 ? "notShow" : "show"}>-</button>
+              <button
+                onClick={reloadSport}
+                className={numberSport === 1 ? "notShow" : "show"}
+              >
+                -
+              </button>
               {newsSport.map((newCardSport) => (
                 <Card
                   card={{
@@ -174,7 +191,7 @@ const HomePage = () => {
                     articleSubtitle: newCardSport.fields.trailText,
                     body: newCardSport.fields.bodyText,
                     placeHolder: "homepage",
-                    idHomepage: newCardSport.id
+                    idHomepage: newCardSport.id,
                   }}
                   key={newCardSport.id}
                 />
@@ -188,7 +205,12 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadScience} className={numberScience === 1 ? "notShow" : "show"}>-</button>
+              <button
+                onClick={reloadScience}
+                className={numberScience === 1 ? "notShow" : "show"}
+              >
+                -
+              </button>
               {newsScience.map((newCardScience) => (
                 <Card
                   card={{
@@ -199,7 +221,7 @@ const HomePage = () => {
                     articleSubtitle: newCardScience.fields.trailText,
                     body: newCardScience.fields.bodyText,
                     placeHolder: "homepage",
-                    idHomepage: newCardScience.id
+                    idHomepage: newCardScience.id,
                   }}
                   key={newCardScience.id}
                 />
@@ -213,7 +235,12 @@ const HomePage = () => {
             </div>
 
             <div className="section__cards">
-              <button onClick={reloadLifeStyle} className={numberLifeStyle === 1 ? "notShow" : "show"}>-</button>
+              <button
+                onClick={reloadLifeStyle}
+                className={numberLifeStyle === 1 ? "notShow" : "show"}
+              >
+                -
+              </button>
               {newsLifeStyle.map((newCardLifeStyle, i) => (
                 <Card
                   card={{
@@ -224,7 +251,7 @@ const HomePage = () => {
                     articleSubtitle: newCardLifeStyle.fields.trailText,
                     body: newCardLifeStyle.fields.bodyText,
                     placeHolder: "homepage",
-                    idHomepage: newCardLifeStyle.id
+                    idHomepage: newCardLifeStyle.id,
                   }}
                   key={newCardLifeStyle.id}
                 />
