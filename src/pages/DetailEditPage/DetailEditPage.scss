@@ -57,6 +57,17 @@ article {
   font-size: 19px;
   padding-right: 20px;
 }
+.article {
+  padding: 20px 70px;
+  font-family: "Cardo", serif;
+
+  p.bodyText {
+    font-size: 18px;
+  }
+  p.main__subtitle {
+    font-size: 25px;
+  }
+}
 
 .article__top-image__detail {
   font-family: "Space Grotesk", sans-serif;
@@ -105,4 +116,5 @@ article {
 
 .main-article {
   min-height: 600px;
+  font: "Cardo", serif;
 }

@@ -11,11 +11,15 @@ const articleReducer = (article, action) => {
         .split(".")
         .reduce((stringSoFar, stringToPutInPlace, index) => {
           let string = stringSoFar + stringToPutInPlace + ".";
-          if (index % 5 === 4) string += "&&&";
+          if (index % 4 === 3) string += "&&&";
           return string;
         }, "")
         .split("&&&")
-        .map((paragraph) => <p key={paragraph.slice(0, 20)}>{paragraph}</p>);
+        .map((paragraph) => (
+          <p key={paragraph.slice(0, 20)} className="bodyText">
+            {paragraph}
+          </p>
+        ));
 
       newArticle = {
         sectionName: articleData.sectionId,
