@@ -17,7 +17,6 @@ body {
   bottom: 0;
   right: 0;
   display: inline-flex;
-
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -316,7 +315,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: px solid black;
     overflow: hidden;
     height: 300px;
   }
