@@ -32,7 +32,7 @@ describe("Given a component Card", () => {
   });
 
   describe("When it receives a card", () => {
-    test("Then it should render its picture, its text and an icon", () => {
+    test("Then it should render its image, its date, its text, its subtitle, its bod, its id", () => {
       render(
         <NewsContextProvider>
           <Router>
