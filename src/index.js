@@ -4,13 +4,24 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import NewsContextProvider from "./store/contexts/NewsContextProvider";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
+
+
   <React.StrictMode>
     <NewsContextProvider>
-      <App />
+      <Auth0Provider
+        domain={process.env.REACT_APP_DOMAIN}
+        clientId={process.env.REACT_APP_ID}
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
     </NewsContextProvider>
   </React.StrictMode>,
+
+
   document.getElementById("root")
 );
 

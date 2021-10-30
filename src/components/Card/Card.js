@@ -10,7 +10,6 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
     getLocalApi();
   }, [getLocalApi]);
 
-
   const initialArticleData = {
     sectionName: sectionName,
     imageSource: image,

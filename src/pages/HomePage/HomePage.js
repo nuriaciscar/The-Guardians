@@ -4,6 +4,7 @@ import CardText from "../../components/CardText/CardText";
 import MainCard from "../../components/MainCard/MainCard";
 import useNews from "../../hooks/useNews";
 import { useEffect, useState } from "react";
+import Filter from "../../components/Filter/Filter";
 
 const HomePage = () => {
   const {
@@ -16,11 +17,13 @@ const HomePage = () => {
     newsLifeStyle,
     loadNewsListLifeStyle,
   } = useNews();
+
   const [numberSport, setNumberSport] = useState(1);
   const [numberScience, setNumberScience] = useState(1);
   const [numberLifeStyle, setNumberLifeStyle] = useState(1);
+  const [filterValue, setFilterValue] = useState("culture");
   useEffect(() => {
-    loadNewsList("culture", 1);
+    loadNewsList(filterValue, 1);
     loadNewsListSport("sport", numberSport);
     loadNewsListScience("science", numberScience);
     loadNewsListLifeStyle("lifeandstyle", numberLifeStyle);
@@ -32,6 +35,7 @@ const HomePage = () => {
     numberSport,
     numberScience,
     numberLifeStyle,
+    filterValue
   ]);
 
   let date = "";
@@ -111,155 +115,162 @@ const HomePage = () => {
     bodyMedium = newsList[2].fields.bodyText;
   }
 
+  const filterClick = (event) => {
+    setFilterValue(event.target.value);
+  }
+
   return (
     <>
       {newsSport.length !== 0 && news.response !== undefined && (
-        <main className="main">
-          <a className="goUp hide" href="#header" id="js-top">
-            <img
-              src="./images/up.png"
-              alt="icon of an arrow"
-              height="30"
-              width="30"
-            ></img>
-          </a>
+        <>
+          <Filter actionOnClick={filterClick} />
+          <main className="main">
+            <a className="goUp hide" href="#header" id="js-top">
+              <img
+                src="./images/up.png"
+                alt="icon of an arrow"
+                height="30"
+                width="30"
+              ></img>
+            </a>
 
-          <section className="main__content main__content--home" id="news">
-            <div className="main__news">
-              <MainCard
-                mainCard={{
-                  date,
-                  id,
-                  image,
-                  title,
-                  sectionName,
-                  articleSubtitle,
-                  body,
-                  placeHolder: "homepage",
-                }}
-                key={id}
-              />
-            </div>
-            <div className="main__aside">
-              <CardText
-                cardText={{
-                  date: dateText,
-                  image: imageText,
-                  text: titleCartText,
-                  sectionName: sectionNameText,
-                  articleSubtitle: articleSubtitleText,
-                  body: bodyText,
-                  placeHolder: "homepage",
-                  id: idText,
-                }}
-                key={idText}
-              />
-              <MediumCard
-                mediumCard={{
-                  date: dateCartMedium,
-                  image: imageCartMedium,
-                  text: titleCartMedium,
-                  sectionName: sectionNameMedium,
-                  articleSubtitle: articleSubtitleMedium,
-                  body: bodyMedium,
-                  placeHolder: "homepage",
-                  id: idMedium,
-                }}
-                key={idMedium}
-              />
-            </div>
-          </section>
-          <section className="section">
-            <div className="section__container-title" id="sports">
-              <h2 className="section__title">SPORTS</h2>
-            </div>
-
-            <div className="section__cards">
-              <button
-                onClick={reloadSport}
-                className={numberSport === 1 ? "notShow" : "show"}
-              >
-                -
-              </button>
-              {newsSport.map((newCardSport) => (
-                <Card
-                  card={{
-                    text: newCardSport.webTitle,
-                    image: newCardSport.fields.thumbnail,
-                    date: newCardSport.webPublicationDate.split("T")[0],
-                    sectionName: newCardSport.sectionName,
-                    articleSubtitle: newCardSport.fields.trailText,
-                    body: newCardSport.fields.bodyText,
+            <section className="main__content main__content--home" id="news">
+              <div className="main__news">
+                <MainCard
+                  mainCard={{
+                    date,
+                    id,
+                    image,
+                    title,
+                    sectionName,
+                    articleSubtitle,
+                    body,
                     placeHolder: "homepage",
-                    idHomepage: newCardSport.id,
                   }}
-                  key={newCardSport.id}
+                  key={id}
                 />
-              ))}
-              <button onClick={reloadSport}>+</button>
-            </div>
-          </section>
-          <section className="section">
-            <div className="section__container-title" id="science">
-              <h2 className="section__title">SCIENCE</h2>
-            </div>
-
-            <div className="section__cards">
-              <button
-                onClick={reloadScience}
-                className={numberScience === 1 ? "notShow" : "show"}
-              >
-                -
-              </button>
-              {newsScience.map((newCardScience) => (
-                <Card
-                  card={{
-                    text: newCardScience.webTitle,
-                    image: newCardScience.fields.thumbnail,
-                    date: newCardScience.webPublicationDate.split("T")[0],
-                    sectionName: newCardScience.sectionName,
-                    articleSubtitle: newCardScience.fields.trailText,
-                    body: newCardScience.fields.bodyText,
+              </div>
+              <div className="main__aside">
+                <CardText
+                  cardText={{
+                    date: dateText,
+                    image: imageText,
+                    text: titleCartText,
+                    sectionName: sectionNameText,
+                    articleSubtitle: articleSubtitleText,
+                    body: bodyText,
                     placeHolder: "homepage",
-                    idHomepage: newCardScience.id,
+                    id: idText,
                   }}
-                  key={newCardScience.id}
+                  key={idText}
                 />
-              ))}
-              <button onClick={reloadScience}>+</button>
-            </div>
-          </section>
-          <section className="section">
-            <div className="section__container-title" id="lifestyle">
-              <h2 className="section__title">LIFESTYLE</h2>
-            </div>
-
-            <div className="section__cards">
-              <button
-                onClick={reloadLifeStyle}
-                className={numberLifeStyle === 1 ? "notShow" : "show"}
-              >
-                -
-              </button>
-              {newsLifeStyle.map((newCardLifeStyle, i) => (
-                <Card
-                  card={{
-                    text: newCardLifeStyle.webTitle,
-                    image: newCardLifeStyle.fields.thumbnail,
-                    date: newCardLifeStyle.webPublicationDate.split("T")[0],
-                    sectionName: newCardLifeStyle.sectionName,
-                    articleSubtitle: newCardLifeStyle.fields.trailText,
-                    body: newCardLifeStyle.fields.bodyText,
+                <MediumCard
+                  mediumCard={{
+                    date: dateCartMedium,
+                    image: imageCartMedium,
+                    text: titleCartMedium,
+                    sectionName: sectionNameMedium,
+                    articleSubtitle: articleSubtitleMedium,
+                    body: bodyMedium,
                     placeHolder: "homepage",
-                    idHomepage: newCardLifeStyle.id,
+                    id: idMedium,
                   }}
-                  key={newCardLifeStyle.id}
+                  key={idMedium}
                 />
-              ))}
-              <button onClick={reloadLifeStyle}>+</button>
-            </div>
-          </section>
-        </main>
+              </div>
+            </section>
+            <section className="section">
+              <div className="section__container-title" id="sports">
+                <h2 className="section__title">SPORTS</h2>
+              </div>
+
+              <div className="section__cards">
+                <button
+                  onClick={reloadSport}
+                  className={numberSport === 1 ? "notShow" : "show"}
+                >
+                  -
+                </button>
+                {newsSport.map((newCardSport) => (
+                  <Card
+                    card={{
+                      text: newCardSport.webTitle,
+                      image: newCardSport.fields.thumbnail,
+                      date: newCardSport.webPublicationDate.split("T")[0],
+                      sectionName: newCardSport.sectionName,
+                      articleSubtitle: newCardSport.fields.trailText,
+                      body: newCardSport.fields.bodyText,
+                      placeHolder: "homepage",
+                      idHomepage: newCardSport.id,
+                    }}
+                    key={newCardSport.id}
+                  />
+                ))}
+                <button onClick={reloadSport}>+</button>
+              </div>
+            </section>
+            <section className="section">
+              <div className="section__container-title" id="science">
+                <h2 className="section__title">SCIENCE</h2>
+              </div>
+
+              <div className="section__cards">
+                <button
+                  onClick={reloadScience}
+                  className={numberScience === 1 ? "notShow" : "show"}
+                >
+                  -
+                </button>
+                {newsScience.map((newCardScience) => (
+                  <Card
+                    card={{
+                      text: newCardScience.webTitle,
+                      image: newCardScience.fields.thumbnail,
+                      date: newCardScience.webPublicationDate.split("T")[0],
+                      sectionName: newCardScience.sectionName,
+                      articleSubtitle: newCardScience.fields.trailText,
+                      body: newCardScience.fields.bodyText,
+                      placeHolder: "homepage",
+                      idHomepage: newCardScience.id,
+                    }}
+                    key={newCardScience.id}
+                  />
+                ))}
+                <button onClick={reloadScience}>+</button>
+              </div>
+            </section>
+            <section className="section">
+              <div className="section__container-title" id="lifestyle">
+                <h2 className="section__title">LIFESTYLE</h2>
+              </div>
+
+              <div className="section__cards">
+                <button
+                  onClick={reloadLifeStyle}
+                  className={numberLifeStyle === 1 ? "notShow" : "show"}
+                >
+                  -
+                </button>
+                {newsLifeStyle.map((newCardLifeStyle, i) => (
+                  <Card
+                    card={{
+                      text: newCardLifeStyle.webTitle,
+                      image: newCardLifeStyle.fields.thumbnail,
+                      date: newCardLifeStyle.webPublicationDate.split("T")[0],
+                      sectionName: newCardLifeStyle.sectionName,
+                      articleSubtitle: newCardLifeStyle.fields.trailText,
+                      body: newCardLifeStyle.fields.bodyText,
+                      placeHolder: "homepage",
+                      idHomepage: newCardLifeStyle.id,
+                    }}
+                    key={newCardLifeStyle.id}
+                  />
+                ))}
+                <button onClick={reloadLifeStyle}>+</button>
+              </div>
+            </section>
+          </main>
+        </>
       )}
     </>
   );

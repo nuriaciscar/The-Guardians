@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import LoginButton from "../LoginButton/LoginButton";
+import LogoutButton from "../LogoutButton/LogoutButton";
+
 
 function Header() {
   const sourceLogo = "./images/header-logo.svg";
@@ -21,13 +24,10 @@ function Header() {
               MY NEWS
             </NavLink>
 
-            <button className="header-user-area__button header-user-area__button--sign-up">
-              Sign up
-            </button>
+            <LoginButton />
 
-            <button className="header-user-area__button header-user-area__button--login">
-              Login
-            </button>
+            <LogoutButton />
+
           </div>
           <div className="header-nav">
             <ul className="header-nav__list">
