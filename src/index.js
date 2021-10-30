@@ -12,8 +12,8 @@ ReactDOM.render(
   <React.StrictMode>
     <NewsContextProvider>
       <Auth0Provider
-        domain="dev-7wh4mbjt.us.auth0.com"
-        clientId="VzSbcgPVMrihomXeyX3D3jXe1FEsSjKb"
+        domain={process.env.REACT_APP_DOMAIN}
+        clientId={process.env.REACT_APP_ID}
         redirectUri={window.location.origin}
       >
         <App />

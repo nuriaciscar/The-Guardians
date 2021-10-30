@@ -1,13 +1,13 @@
+const Filter = ({ actionOnClick }) => {
 
-const Filter = () => {
   return (
-    <form action="">
-      <select name="section">
-        <option value="-" selected>-</option>
+    <>
+      <label htmlFor="section">Choose section:</label>
+      <select name="section" onClick={(e) => actionOnClick(e)}>
         <option value="football">football</option>
         <option value="sport">sport</option>
-        <option value="news">news</option>
-        <option value="culture">culture</option>
+        <option value="news" >news</option>
+        <option value="culture" defaultValue>culture</option>
         <option value="science">science</option>
         <option value="society">society</option>
         <option value="world">world</option>
@@ -15,7 +15,7 @@ const Filter = () => {
         <option value="lifeandstyle">lifeandstyle</option>
         <option value="film">film</option>
       </select>
-    </form>
+    </>
   )
 }
 

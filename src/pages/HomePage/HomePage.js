@@ -21,8 +21,9 @@ const HomePage = () => {
   const [numberSport, setNumberSport] = useState(1);
   const [numberScience, setNumberScience] = useState(1);
   const [numberLifeStyle, setNumberLifeStyle] = useState(1);
+  const [filterValue, setFilterValue] = useState("culture");
   useEffect(() => {
-    loadNewsList("culture", 1);
+    loadNewsList(filterValue, 1);
     loadNewsListSport("sport", numberSport);
     loadNewsListScience("science", numberScience);
     loadNewsListLifeStyle("lifeandstyle", numberLifeStyle);
@@ -34,6 +35,7 @@ const HomePage = () => {
     numberSport,
     numberScience,
     numberLifeStyle,
+    filterValue
   ]);
 
   let date = "";
@@ -113,11 +115,15 @@ const HomePage = () => {
     bodyMedium = newsList[2].fields.bodyText;
   }
 
+  const filterClick = (event) => {
+    setFilterValue(event.target.value);
+  }
+
   return (
     <>
       {newsSport.length !== 0 && news.response !== undefined && (
         <>
-          <Filter />
+          <Filter actionOnClick={filterClick} />
           <main className="main">
             <a className="goUp hide" href="#header" id="js-top">
               <img
