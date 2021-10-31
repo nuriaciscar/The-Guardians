@@ -32,6 +32,7 @@ const Card = ({
     id: id,
   };
 
+
   const postNewOnClick = () => {
     if (placeHolder === "homepage" && !iconState) {
       setIconState(!iconState);
@@ -54,9 +55,6 @@ const Card = ({
       setIconState(true);
     }
   }, [placeHolder]);
-
-  // detailEditPut/?id=1
-  // detail/?id=
 
   return (
     <div className="section__card">

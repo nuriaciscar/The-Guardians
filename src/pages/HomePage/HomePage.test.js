@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import NewsContextProvider from "../../store/contexts/NewsContextProvider";
 import HomePage from "./HomePage";

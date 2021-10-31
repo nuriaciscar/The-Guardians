@@ -27,7 +27,6 @@ const useNews = () => {
 
       /* "http://content.guardianapis.com/search?section=culture&from-date=2015-03-06&to-date=2021-03-06&order-by=relevance&show-fields=all&page-size=10&page=6&api-key=54d47472-427a-49dc-b6af-d65d241bc415")*/
       let news = await response.json();
-
       dispatch(loadNewsListAction(news));
     },
     [dispatch]
