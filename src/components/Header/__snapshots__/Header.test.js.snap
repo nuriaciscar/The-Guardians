@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Given a Header component, When it renders Then it should render a header with a logo and his navigation 1`] = `
+exports[`Given a Header component, Then it should render a header with a logo and his navigation 1`] = `
 <header
   className="header"
   id="header"
