@@ -6,7 +6,6 @@ const newsReducerLifeStyle = (newsLifeStyle, action) => {
   switch (action.type) {
     case actionTypes.loadNewsListLifeStyle:
       newNewsLifeStyle = action.newsListLifeStyle.response.results;
-      console.log(action.newsListLifeStyle);
       break;
     default:
       newNewsLifeStyle = newsLifeStyle;

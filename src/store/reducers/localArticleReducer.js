@@ -6,7 +6,6 @@ const localArticleReducer = (article, action) => {
   switch (action.type) {
     case actionTypes.getApiArticleById:
       const articleData = action.id[0];
-
       newArticle = {
         sectionName: articleData.sectionName,
         imageSource: articleData.imageSource,
@@ -16,7 +15,6 @@ const localArticleReducer = (article, action) => {
         bodyText: articleData.bodyText,
         id: articleData.id,
       };
-
       break;
 
     default:
