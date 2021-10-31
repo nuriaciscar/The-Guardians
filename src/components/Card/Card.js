@@ -20,6 +20,7 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
     id: id,
   };
 
+
   const postNewOnClick = () => {
     if (placeHolder === "homepage" && !iconState) {
       setIconState(!iconState);
@@ -40,9 +41,6 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
       setIconState(true);
     }
   }, [placeHolder]);
-
-  // detailEditPut/?id=1
-  // detail/?id=
 
   return (
     <div className="section__card">

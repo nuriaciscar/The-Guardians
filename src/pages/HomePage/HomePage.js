@@ -22,6 +22,7 @@ const HomePage = () => {
   const [numberScience, setNumberScience] = useState(1);
   const [numberLifeStyle, setNumberLifeStyle] = useState(1);
   const [filterValue, setFilterValue] = useState("culture");
+
   useEffect(() => {
     loadNewsList(filterValue, 1);
     loadNewsListSport("sport", numberSport);
