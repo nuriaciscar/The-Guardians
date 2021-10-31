@@ -2,8 +2,20 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useLocalApi from "../../hooks/useLocalApi";
 
-const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, id, placeHolder, idHomepage } }) => {
-  const [iconState, setIconState,] = useState(false);
+const Card = ({
+  card: {
+    date,
+    image,
+    text,
+    sectionName,
+    articleSubtitle,
+    body,
+    id,
+    placeHolder,
+    idHomepage,
+  },
+}) => {
+  const [iconState, setIconState] = useState(false);
   const { postLocalApi } = useLocalApi();
   const { getLocalApi, localApi, deleteLocalApi } = useLocalApi();
   useEffect(() => {
@@ -26,15 +38,17 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
       setIconState(!iconState);
     }
 
-    const repeatedNew = localApi.some((element) => element.articleTitle === initialArticleData.articleTitle);
+    const repeatedNew = localApi.some(
+      (element) => element.articleTitle === initialArticleData.articleTitle
+    );
     if (placeHolder === "homepage" && !repeatedNew) {
       postLocalApi(initialArticleData);
     }
-  }
+  };
 
   const deleteOnClick = () => {
     deleteLocalApi(initialArticleData.id);
-  }
+  };
 
   useEffect(() => {
     if (placeHolder === "mynews") {
@@ -44,7 +58,14 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
 
   return (
     <div className="section__card">
-      <NavLink to={placeHolder === "homepage" ? `/detail/?id=${idHomepage}` : `detailEditPut/?id=${initialArticleData.id}`} className="main__more__read">
+      <NavLink
+        to={
+          placeHolder === "homepage"
+            ? `/detail/?id=${idHomepage}`
+            : `detailEditPut/?id=${initialArticleData.id}`
+        }
+        className="main__more__read"
+      >
         <img
           src={image}
           alt=""
@@ -55,14 +76,33 @@ const Card = ({ card: { date, image, text, sectionName, articleSubtitle, body, i
       </NavLink>
       <p className="section__text">{text} </p>
       <div className="main__more__card">
-        <NavLink to={placeHolder === "homepage" ? `/detail/?id=${idHomepage}` : `detailEditPut/?id=${initialArticleData.id}`} className="main__more__read">
+        <NavLink
+          to={
+            placeHolder === "homepage"
+              ? `/detail/?id=${idHomepage}`
+              : `detailEditPut/?id=${initialArticleData.id}`
+          }
+          className="main__more__read"
+        >
           READ MORE
         </NavLink>
         <div className="main__read-later">
-
-          <img src="/images/bookmark_false.png" alt="icono false" className={iconState ? "notShow" : "show"} width="17" height="17" onClick={postNewOnClick} />
-          <img src="/images/bookmark_true.png" alt="icono true" className={iconState ? "show" : "notShow"} width="17" height="17" onClick={deleteOnClick} />
-
+          <img
+            src="/images/bookmark_false.png"
+            alt="icono false"
+            className={iconState ? "notShow" : "show"}
+            width="17"
+            height="17"
+            onClick={postNewOnClick}
+          />
+          <img
+            src="/images/bookmark_true.png"
+            alt="icono true"
+            className={iconState ? "show" : "notShow"}
+            width="17"
+            height="17"
+            onClick={deleteOnClick}
+          />
         </div>
       </div>
     </div>

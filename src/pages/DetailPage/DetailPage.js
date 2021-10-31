@@ -29,7 +29,6 @@ const DetailPage = () => {
             <div className="article__top-image">
               <p>{article.articleDate}</p>
               <i></i>
-
             </div>
             <img
               src={article.imageSource}

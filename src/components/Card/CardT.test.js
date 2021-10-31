@@ -3,6 +3,10 @@ import Card from "./Card";
 import { BrowserRouter as Router } from "react-router-dom";
 import { server } from "../../mocks/server";
 import NewsContextProvider from "../../store/contexts/NewsContextProvider";
+import React from "react";
+import ReactTestRender from "react-test-renderer";
+import getCard from "../../factories/CardFactory";
+import { NavLink } from "react-router-dom";
 
 describe("Given a component Card", () => {
   let card;
@@ -41,21 +45,33 @@ describe("Given a component Card", () => {
         </NewsContextProvider>
       );
     });
-    // test("Then it should render its picture, its text and an icon", () => {
 
+    // test("Then it should render a button with a ", () => {
     //   render(
-    //     <Router>
-    //       <Card card={card} />
-    //     </Router>
+    //     <NewsContextProvider>
+    //       <Router>
+    //         <Card card={card}>
+    //           <NavLink to="homepage"></NavLink>
+    //         </Card>
+    //       </Router>
+    //     </NewsContextProvider>
     //   );
-
-    //   const image = screen.getByRole("img", "");
-    //   const text = screen.getByText(card.text);
-    //   const icon = screen.getByText(card.icon);
-
-    //   expect(image).toBeInTheDocument();
-    //   expect(text).toBeInTheDocument();
-    //   expect(icon).toBeInTheDocument();
+    //   const navlink = screen.getAllByRole()
+    //   expect(navlink).toBeInTheDocument();
     // });
+    describe("When it receives an object", () => {
+      test("Then it should render a card with his details inside", () => {
+        const cardLittle = getCard();
+        const cardComponent = ReactTestRender.create(
+          <NewsContextProvider>
+            <Router>
+              <Card card={cardLittle} />
+            </Router>
+          </NewsContextProvider>
+        );
+
+        expect(cardComponent.toJSON()).toMatchSnapshot();
+      });
+    });
   });
 });
