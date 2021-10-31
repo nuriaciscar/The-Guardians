@@ -1,4 +1,3 @@
-import { getNews, getRecipes } from "../../factories/newsFactory"
 import newsReducerSport from "./newsReducerSport"
 import { loadNewsListSportAction } from "../actions/actionCreator"
 
