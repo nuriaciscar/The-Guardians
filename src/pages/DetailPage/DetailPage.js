@@ -6,8 +6,6 @@ const DetailPage = () => {
   const { article, loadArticleById } = useArticle();
   let query = useLocation().search;
 
-  console.log(query);
-
   query = query
     .slice(1, query.length)
     .split("&")
