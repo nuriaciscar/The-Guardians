@@ -1,42 +1,24 @@
 import { rest } from "msw";
+import { mockArticle, mockArrayApi } from "./handlersCtx";
 
 export const handlers = [
   rest.get(
     "https://api-guardians.herokuapp.com/news",
     async (req, res, ctx) => {
-      const resp = res(
-        ctx.json([
-          {
-            sectionName: "SECTION",
-            articleDate: "20-10-1994",
-            imageSource: "http://url/",
-            articleTitle: "ULTIMAS NOTICIAS",
-            articleSubtitle: "Que fuerte todo esto, no me lo creo",
-            bodyText:
-              "Woooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooow",
-            id: 1,
-          },
-          {
-            sectionName: "SECTION 2",
-            articleDate: "20-10-1994",
-            imageSource: "http://url/",
-            articleTitle: "ULTIMAS NOTICIAS",
-            articleSubtitle: "Yo tampoco",
-            bodyText:
-              "Woooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooow wow",
-            id: 2,
-          },
-        ])
-      );
+      const resp = res(ctx.json(mockArrayApi));
       return resp;
     }
   ),
+];
 
-  rest.delete(
-    "https://api-guardians.herokuapp.com/news",
-    +":id",
+export const detailPageHandlers = [
+  rest.get(
+    "https://content.guardianapis.com/football/live/2021/oct/23/crystal-palace-v-newcastle-leeds-v-wolves-and-more-football-clockwatch-live",
     async (req, res, ctx) => {
-      const resp = res(ctx.status(200), ctx.json({}));
+      const query = req.url.searchParams;
+      query.append("api-key", "54d47472-427a-49dc-b6af-d65d241bc415");
+      query.append("show-fields", "all");
+      const resp = res(ctx.json(mockArticle));
       return resp;
     }
   ),
