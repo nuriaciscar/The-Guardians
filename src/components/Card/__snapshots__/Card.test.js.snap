@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a component Card When it receives a card When it receives an object Then it should render a card with his details inside 1`] = `
+<div
+  className="section__card"
+>
+  <a
+    aria-current={null}
+    className="main__more__read"
+    href="/detailEditPut/?id=undefined"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      className="card__image"
+      height="100"
+      width="200"
+    />
+  </a>
+  <p
+    className="section__text"
+  >
+     
+  </p>
+  <div
+    className="main__more__card"
+  >
+    <a
+      aria-current={null}
+      className="main__more__read"
+      href="/detailEditPut/?id=undefined"
+      onClick={[Function]}
+    >
+      READ MORE
+    </a>
+    <div
+      className="main__read-later"
+    >
+      <img
+        alt="icono false"
+        className="show"
+        height="17"
+        onClick={[Function]}
+        src="/images/bookmark_false.png"
+        width="17"
+      />
+      <img
+        alt="icono true"
+        className="notShow"
+        height="17"
+        onClick={[Function]}
+        src="/images/bookmark_true.png"
+        width="17"
+      />
+    </div>
+  </div>
+</div>
+`;
