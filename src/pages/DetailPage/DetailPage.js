@@ -6,6 +6,8 @@ const DetailPage = () => {
   const { article, loadArticleById } = useArticle();
   let query = useLocation().search;
 
+  console.log(query);
+
   query = query
     .slice(1, query.length)
     .split("&")
@@ -29,7 +31,6 @@ const DetailPage = () => {
             <div className="article__top-image">
               <p>{article.articleDate}</p>
               <i></i>
-
             </div>
             <img
               src={article.imageSource}

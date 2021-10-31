@@ -2,16 +2,33 @@ import { render, screen } from "@testing-library/react";
 import DetailPage from "./DetailPage";
 import getNewsDetails from "../../factories/detailFactory";
 import NewsContextProvider from "../../store/contexts/NewsContextProvider";
-import { BrowserRouter as Router } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
+import { serverArticleApiGuardian } from "../../mocks/servers";
 
 describe("Given a DetailPage component,", () => {
+  beforeAll(() => {
+    serverArticleApiGuardian.listen();
+  });
+
+  afterEach(() => {
+    serverArticleApiGuardian.resetHandlers();
+  });
+
+  afterAll(() => {
+    serverArticleApiGuardian.close();
+  });
+
   describe("When is invoked", () => {
     test("Then it renders the DetailPage", () => {
       render(
         <NewsContextProvider>
-          <Router>
+          <MemoryRouter
+            initialEntries={[
+              "/details/?id=football/live/2021/oct/23/crystal-palace-v-newcastle-leeds-v-wolves-and-more-football-clockwatch-live",
+            ]}
+          >
             <DetailPage />
-          </Router>
+          </MemoryRouter>
         </NewsContextProvider>
       );
     });
