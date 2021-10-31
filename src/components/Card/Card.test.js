@@ -3,6 +3,8 @@ import Card from "./Card";
 import { BrowserRouter as Router } from "react-router-dom";
 import { server } from "../../mocks/server";
 import NewsContextProvider from "../../store/contexts/NewsContextProvider";
+import React from "react";
+import ReactTestRender from "react-test-renderer";
 
 describe("Given a component Card", () => {
   let card;
@@ -41,21 +43,15 @@ describe("Given a component Card", () => {
         </NewsContextProvider>
       );
     });
-    // test("Then it should render its picture, its text and an icon", () => {
-
-    //   render(
-    //     <Router>
-    //       <Card card={card} />
-    //     </Router>
-    //   );
-
-    //   const image = screen.getByRole("img", "");
-    //   const text = screen.getByText(card.text);
-    //   const icon = screen.getByText(card.icon);
-
-    //   expect(image).toBeInTheDocument();
-    //   expect(text).toBeInTheDocument();
-    //   expect(icon).toBeInTheDocument();
-    // });
+    describe("When it receives an object", () => {
+      test("Then it should render a card with his details inside", () => {
+        const cardComponent = ReactTestRender.create(
+          <Router>
+            <Card />
+          </Router>
+        );
+        expect(cardComponent.toJSON()).toMatchSnapshot();
+      });
+    });
   });
 });
