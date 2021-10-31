@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Given a Header component, When it renders Then it should render a header with a logo and his navigation 1`] = `
+exports[`Given a Header component, Then it should render a header with a logo and his navigation 1`] = `
 <header
   className="header"
   id="header"
@@ -37,14 +37,16 @@ exports[`Given a Header component, When it renders Then it should render a heade
           MY NEWS
         </a>
         <button
-          className="header-user-area__button header-user-area__button--sign-up"
+          className="header-user-area__button header-user-area__button--login"
+          onClick={[Function]}
         >
-          Sign up
+          Login
         </button>
         <button
           className="header-user-area__button header-user-area__button--login"
+          onClick={[Function]}
         >
-          Login
+          Log Out
         </button>
       </div>
       <div

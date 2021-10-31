@@ -5,6 +5,8 @@ import { server } from "../../mocks/server";
 import NewsContextProvider from "../../store/contexts/NewsContextProvider";
 import React from "react";
 import ReactTestRender from "react-test-renderer";
+import getCard from "../../factories/CardFactory";
+import { NavLink } from "react-router-dom";
 
 describe("Given a component Card", () => {
   let card;
@@ -43,13 +45,31 @@ describe("Given a component Card", () => {
         </NewsContextProvider>
       );
     });
+
+    // test("Then it should render a button with a ", () => {
+    //   render(
+    //     <NewsContextProvider>
+    //       <Router>
+    //         <Card card={card}>
+    //           <NavLink to="homepage"></NavLink>
+    //         </Card>
+    //       </Router>
+    //     </NewsContextProvider>
+    //   );
+    //   const navlink = screen.getAllByRole()
+    //   expect(navlink).toBeInTheDocument();
+    // });
     describe("When it receives an object", () => {
       test("Then it should render a card with his details inside", () => {
+        const cardLittle = getCard();
         const cardComponent = ReactTestRender.create(
-          <Router>
-            <Card />
-          </Router>
+          <NewsContextProvider>
+            <Router>
+              <Card card={cardLittle} />
+            </Router>
+          </NewsContextProvider>
         );
+
         expect(cardComponent.toJSON()).toMatchSnapshot();
       });
     });

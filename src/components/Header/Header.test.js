@@ -14,14 +14,12 @@ describe("Given a Header component,", () => {
       );
     });
   });
-  describe("When it renders", () => {
-    test("Then it should render a header with a logo and his navigation", () => {
-      const headerComponent = ReactTestRender.create(
-        <Router>
-          <Header />
-        </Router>
-      );
-      expect(headerComponent.toJSON()).toMatchSnapshot();
-    });
+  test("Then it should render a header with a logo and his navigation", () => {
+    const headerComponent = ReactTestRender.create(
+      <Router>
+        <Header />
+      </Router>
+    );
+    expect(headerComponent.toJSON()).toMatchSnapshot();
   });
 });
