@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a Header component, When it renders Then it should render a header with a logo and his navigation 1`] = `
+<header
+  className="header"
+  id="header"
+>
+  <div
+    className="header__top-container"
+  >
+    <a
+      aria-current={null}
+      className="header-logo"
+      href="/home"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo of the guardian"
+        className="header-logo__image"
+        height="100"
+        src="./images/header-logo.svg"
+        width="290"
+      />
+    </a>
+    <div
+      className="header-actions"
+    >
+      <div
+        className="header-user-area"
+      >
+        <a
+          aria-current={null}
+          className="header-user-area__my-news"
+          href="/mynews"
+          onClick={[Function]}
+        >
+          MY NEWS
+        </a>
+        <button
+          className="header-user-area__button header-user-area__button--sign-up"
+        >
+          Sign up
+        </button>
+        <button
+          className="header-user-area__button header-user-area__button--login"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="header-nav"
+      >
+        <ul
+          className="header-nav__list"
+        >
+          <a
+            className="header-nav__list-element"
+            href="/home#news"
+          >
+            NEWS
+          </a>
+          <a
+            className="header-nav__list-element"
+            href="/home#sports"
+          >
+            SPORTS
+          </a>
+          <a
+            className="header-nav__list-element"
+            href="/home#science"
+          >
+            SCIENCE
+          </a>
+          <a
+            className="header-nav__list-element"
+            href="/home#lifestyle"
+          >
+            LIFESTYLE
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="header-bottom-container"
+  >
+    <div
+      className="header-runner"
+    >
+      <div
+        className="header-runner__element"
+      >
+        <p
+          className="header-runner__element__text__color"
+        >
+          Breaking News
+        </p>
+      </div>
+      <div
+        className="header-runner__element"
+      >
+        <p
+          className="header-runner__element__text"
+        >
+          Mario is exploting his students
+        </p>
+      </div>
+      <div
+        className="header-runner__element"
+      >
+        <p
+          className="header-runner__element__text"
+        >
+          ...Again
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+`;
