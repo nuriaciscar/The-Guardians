@@ -10,7 +10,9 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-
+img {
+  object-fit: cover;
+}
 .goUp {
   transition: all 0.25s ease-in-out;
   position: fixed;
@@ -197,9 +199,8 @@ a {
     border-bottom: 1px solid black;
     height: 35%;
     width: 100%;
-    padding-left: 45px;
+    padding-left: 40px;
     padding-right: 45px;
-    padding-top: 15px;
   }
 
   &-bottom {
@@ -320,7 +321,6 @@ a {
     width: 33%;
     font-family: "Cardo", serif;
     font-size: 17px;
-    font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -525,5 +525,4 @@ a {
   width: 100%;
   font-size: 26px !important;
   font-weight: 300 !important;
-  font-style: italic !important;
 }
