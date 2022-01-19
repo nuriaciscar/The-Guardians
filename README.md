@@ -1,4 +1,22 @@
-# Group7-Project-202109
+# Group7-THE GUARDIANS
+
+FRONTEND PROJECT 🌝
+
+Group project developing a web page based on The Guardian Api.
+
+➖  Tested using Jest.
+
+➖  Previously designed on Figma, a great tool to plan the app's design, his accessibility and features. 
+
+### Technologies used
+💫  Frontend: React | SASS | BEM | 
+
+💫  Other: Figma 
+
+#### Link: https://the-guardians.netlify.app/
+
+
+
 
 ## HEADER
 
